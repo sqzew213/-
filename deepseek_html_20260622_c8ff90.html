@@ -1,0 +1,2138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UK 유니버시티 포털 | 25+ 대학 · EC 대회 · 비자/유학 가이드</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Noto Sans KR', system-ui, sans-serif;
+        }
+        body {
+            background-color: #f4f7fc;
+            color: #1e2a3a;
+            line-height: 1.8;
+        }
+        :root {
+            --navy: #0a1930;
+            --gold: #d4a843;
+            --gold-light: #f0e4c6;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(10, 25, 48, 0.08);
+            --border-radius: 16px;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e9edf4;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--gold);
+            border-radius: 10px;
+        }
+
+        header {
+            background: var(--navy);
+            color: white;
+            padding: 0 2rem;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        .logo:hover {
+            opacity: 0.8;
+        }
+        .logo span {
+            color: var(--gold);
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            font-weight: 500;
+            flex-wrap: wrap;
+        }
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+        .header-search {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 40px;
+            padding: 0.3rem 0.3rem 0.3rem 1.2rem;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .header-search input {
+            background: transparent;
+            border: none;
+            padding: 0.5rem 0;
+            color: white;
+            width: 200px;
+            font-size: 0.9rem;
+            outline: none;
+        }
+        .header-search input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        .header-search button {
+            background: var(--gold);
+            border: none;
+            color: var(--navy);
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .header-search button:hover {
+            background: #e8c35a;
+            transform: scale(1.02);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #0a1930 0%, #142b4b 100%);
+            color: white;
+            padding: 3rem 2rem 4rem;
+            text-align: center;
+            border-bottom: 6px solid var(--gold);
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+        }
+        .hero h1 span {
+            color: var(--gold);
+        }
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.85;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        .hero-search {
+            max-width: 620px;
+            margin: 0 auto;
+            display: flex;
+            background: white;
+            border-radius: 60px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        }
+        .hero-search input {
+            flex: 1;
+            border: none;
+            padding: 1.2rem 1.8rem;
+            font-size: 1.1rem;
+            outline: none;
+        }
+        .hero-search button {
+            background: var(--gold);
+            border: none;
+            padding: 1.2rem 2.5rem;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--navy);
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .hero-search button:hover {
+            background: #e8c35a;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: -2.5rem auto 3rem;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 10;
+        }
+        .stat-card {
+            background: white;
+            padding: 1.8rem 1rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            border-top: 5px solid var(--gold);
+        }
+        .stat-card h3 {
+            font-size: 2.2rem;
+            color: var(--navy);
+        }
+        .stat-card p {
+            color: #4a5a72;
+            font-weight: 500;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem 3rem;
+        }
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section-title span {
+            background: var(--navy);
+            color: var(--gold);
+            font-size: 1rem;
+            padding: 0.2rem 0.8rem;
+            border-radius: 40px;
+        }
+        .section-desc {
+            color: #4a5a72;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        #noResults {
+            display: none;
+            text-align: center;
+            padding: 3rem;
+            font-size: 1.2rem;
+            color: #5a6a82;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        #searchResultsPanel {
+            display: none;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        #searchResultsPanel h3 {
+            color: var(--navy);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 0.5rem;
+        }
+        #searchResultsPanel .result-item {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        #searchResultsPanel .result-item:last-child {
+            border-bottom: none;
+        }
+        #searchResultsPanel .result-item strong {
+            color: var(--navy);
+        }
+        #searchResultsPanel .result-item .tag {
+            background: var(--gold-light);
+            padding: 0.1rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+
+        .major-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        .major-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 1.8rem;
+            box-shadow: var(--shadow);
+            transition: all 0.25s ease;
+            cursor: pointer;
+            border-bottom: 4px solid transparent;
+        }
+        .major-card:hover {
+            transform: translateY(-6px);
+            border-bottom-color: var(--gold);
+            box-shadow: 0 20px 40px rgba(10, 25, 48, 0.12);
+        }
+        .major-card .icon {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+        }
+        .major-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.3rem;
+            color: var(--navy);
+        }
+        .major-card .badge {
+            background: var(--gold-light);
+            color: var(--navy);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.2rem 0.8rem;
+            border-radius: 40px;
+            display: inline-block;
+            margin-bottom: 0.8rem;
+        }
+        .major-card p {
+            color: #3d4e66;
+            font-size: 0.95rem;
+        }
+        .major-card .click-hint {
+            font-size: 0.8rem;
+            color: var(--gold);
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        .accordion {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+        .accordion-item {
+            border-bottom: 1px solid #e9edf4;
+        }
+        .accordion-item:last-child {
+            border-bottom: none;
+        }
+        .accordion-header {
+            padding: 1.2rem 2rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            transition: background 0.2s;
+        }
+        .accordion-header:hover {
+            background: #f8faff;
+        }
+        .accordion-header .arrow {
+            transition: transform 0.3s;
+            font-size: 1.4rem;
+        }
+        .accordion-item.active .accordion-header .arrow {
+            transform: rotate(180deg);
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.6s ease, padding 0.3s ease;
+            padding: 0 2rem;
+            background: #fafcff;
+        }
+        .accordion-item.active .accordion-content {
+            max-height: 48000px;
+            padding: 1.5rem 2rem 2.5rem;
+        }
+        .accordion-content ul {
+            padding-left: 1.5rem;
+        }
+        .accordion-content li {
+            margin-bottom: 0.5rem;
+        }
+        .accordion-content .highlight {
+            background: var(--gold-light);
+            padding: 0.2rem 0.8rem;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+        .official-link {
+            display: inline-block;
+            margin-top: 0.5rem;
+            color: #0066cc;
+            font-weight: 600;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .official-link:hover {
+            color: #004499;
+        }
+        .download-link {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--navy);
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-top: 0.3rem;
+            transition: 0.2s;
+        }
+        .download-link:hover {
+            background: #e8c35a;
+            transform: scale(1.02);
+        }
+
+        .tabs-container {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+        .tabs-header {
+            display: flex;
+            background: #f0f3f9;
+            border-bottom: 2px solid #dce3ed;
+            flex-wrap: wrap;
+        }
+        .tab-btn {
+            flex: 1;
+            padding: 1rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            transition: 0.2s;
+            color: #3d4e66;
+            min-width: 120px;
+        }
+        .tab-btn.active {
+            background: white;
+            color: var(--navy);
+            border-bottom: 4px solid var(--gold);
+        }
+        .tab-content {
+            display: none;
+            padding: 2rem;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .tab-content table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .tab-content th,
+        .tab-content td {
+            padding: 0.8rem;
+            border-bottom: 1px solid #e9edf4;
+            text-align: left;
+        }
+        .tab-content th {
+            background: var(--navy);
+            color: white;
+        }
+
+        .uni-table-wrap {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+        .uni-table-wrap table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .uni-table-wrap th {
+            background: var(--navy);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+        }
+        .uni-table-wrap td {
+            padding: 1rem;
+            border-bottom: 1px solid #eef2f7;
+            vertical-align: middle;
+        }
+        .uni-row-click {
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+        .uni-row-click:hover {
+            background: #f0f7ff;
+        }
+        .uni-row-click .view-detail {
+            background: var(--navy);
+            color: white;
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .uni-row-click:hover .view-detail {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        .dept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .dept-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            cursor: pointer;
+            transition: 0.2s;
+            border-left: 6px solid var(--gold);
+        }
+        .dept-card:hover {
+            transform: scale(1.02);
+            background: #fafcff;
+        }
+        .dept-card h4 {
+            font-size: 1.2rem;
+            color: var(--navy);
+        }
+        .dept-card p {
+            font-size: 0.9rem;
+            color: #4a5a72;
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 25, 48, 0.7);
+            backdrop-filter: blur(4px);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-overlay.active {
+            display: flex;
+        }
+        .modal-box {
+            background: white;
+            max-width: 900px;
+            width: 94%;
+            max-height: 85vh;
+            overflow-y: auto;
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            animation: fadeUp 0.3s ease;
+        }
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: scale(0.95) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 2rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: #4a5a72;
+            transition: 0.2s;
+        }
+        .modal-close:hover {
+            color: var(--navy);
+            transform: rotate(90deg);
+        }
+        .modal-box h2 {
+            font-size: 1.8rem;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+        .modal-box .sub {
+            color: var(--gold);
+            font-weight: 600;
+        }
+        .modal-box ul {
+            padding-left: 1.5rem;
+            margin: 1rem 0;
+        }
+        .modal-box ul li {
+            margin-bottom: 0.5rem;
+        }
+        .modal-box table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+        .modal-box th,
+        .modal-box td {
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        .modal-box th {
+            background: #f0f3f9;
+        }
+
+        .faq-grid {
+            display: grid;
+            gap: 1rem;
+        }
+        .faq-item {
+            background: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .faq-item .q {
+            padding: 1.2rem 1.8rem;
+            font-weight: 700;
+            display: flex;
+            justify-content: space-between;
+            background: white;
+        }
+        .faq-item .a {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 1.8rem;
+            background: #fafcff;
+            transition: 0.3s ease;
+            color: #2c3e50;
+        }
+        .faq-item.active .a {
+            max-height: 2500px;
+            padding: 0 1.8rem 1.8rem;
+        }
+
+        .ec-guide-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .ec-guide-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 1.8rem;
+            box-shadow: var(--shadow);
+            border-left: 6px solid var(--gold);
+        }
+        .ec-guide-card h4 {
+            color: var(--navy);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        .ec-guide-card p {
+            font-size: 0.95rem;
+            color: #3d4e66;
+            margin-bottom: 0.5rem;
+        }
+        .ec-guide-card ul {
+            padding-left: 1.2rem;
+            font-size: 0.95rem;
+            color: #3d4e66;
+        }
+        .ec-guide-card ul li {
+            margin-bottom: 0.3rem;
+        }
+
+        .glossary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .glossary-item {
+            background: white;
+            padding: 1.2rem 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--gold);
+        }
+        .glossary-item h4 {
+            color: var(--navy);
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+        .glossary-item p {
+            font-size: 0.9rem;
+            color: #3d4e66;
+        }
+
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .book-card {
+            background: white;
+            padding: 1.2rem 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+        .book-card h4 {
+            color: var(--navy);
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+        .book-card .author {
+            font-size: 0.85rem;
+            color: #5a6a82;
+        }
+        .book-card p {
+            font-size: 0.9rem;
+            color: #3d4e66;
+            margin-top: 0.3rem;
+        }
+
+        .ranking-table-wrap {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+        .ranking-table-wrap table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .ranking-table-wrap th {
+            background: var(--navy);
+            color: white;
+            padding: 0.8rem;
+            text-align: left;
+        }
+        .ranking-table-wrap td {
+            padding: 0.8rem;
+            border-bottom: 1px solid #eef2f7;
+        }
+
+        .checklist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .checklist-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+        .checklist-card h4 {
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+        .checklist-card ul {
+            padding-left: 1.2rem;
+        }
+        .checklist-card ul li {
+            margin-bottom: 0.3rem;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            background: var(--navy);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        footer strong {
+            color: var(--gold);
+        }
+
+        .search-item.hidden {
+            display: none !important;
+        }
+
+        @media (max-width: 992px) {
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .nav-links {
+                display: none;
+            }
+            header {
+                flex-wrap: wrap;
+                height: auto;
+                padding: 0.8rem 1rem;
+                gap: 0.8rem;
+            }
+            .header-search {
+                width: 100%;
+            }
+            .header-search input {
+                width: 100%;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+        @media (max-width: 600px) {
+            .stats {
+                grid-template-columns: 1fr;
+            }
+            .hero-search {
+                flex-direction: column;
+                border-radius: 20px;
+            }
+            .hero-search input {
+                padding: 1rem;
+            }
+            .hero-search button {
+                padding: 1rem;
+            }
+            .section-title {
+                font-size: 1.6rem;
+            }
+            .modal-box {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo" onclick="goHome()">UK<span>Uni</span>포털</div>
+        <div class="nav-links">
+            <a href="#subjects">전체 전공</a>
+            <a href="#roadmap">AP 로드맵</a>
+            <a href="#uni-dept">대학별 학과</a>
+            <a href="#dyson">다이슨 스쿨</a>
+            <a href="#ec-guide">EC/대회</a>
+            <a href="#ps-guide">PS 작성법</a>
+            <a href="#exams">ESAT/TMUA</a>
+            <a href="#uk-life">유학/비자</a>
+            <a href="#faq">FAQ</a>
+        </div>
+        <div class="header-search">
+            <input type="text" id="headerSearchInput" placeholder="전공, 대학, 시험, 대회 검색...">
+            <button onclick="performSearch()">검색</button>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>🇬🇧 영국 대학 <span>모든 학과</span> 완전 정복<br>25+ 대학 · EC 대회 · 비자/유학 가이드</h1>
+        <p>STEM · 인문 · 사회 · 예술 · 경영 · 법학 · 의학 — 전공별 필수 AP, 대학별 학과 디렉토리, 입시 전략, EC/봉사 활동, Personal Statement 작성법, ESAT/TMUA 시험 완벽 대비</p>
+        <div class="hero-search">
+            <input type="text" id="mainSearchInput" placeholder="'PPE', 'LSE 경제학', '케임브리지 자연과학', 'ESAT' 검색">
+            <button onclick="performSearch()">검색하기</button>
+        </div>
+    </section>
+
+    <div class="stats">
+        <div class="stat-card"><h3>250+</h3><p>세부 전공 트랙</p></div>
+        <div class="stat-card"><h3>25개</h3><p>Top 대학 디렉토리</p></div>
+        <div class="stat-card"><h3>9개</h3><p>학문 분류</p></div>
+        <div class="stat-card"><h3>AP 5점</h3><p>명문대 합격 골든티켓</p></div>
+    </div>
+
+    <div class="container" id="mainContent">
+        <div id="noResults">🔍 검색 결과가 없습니다. 다른 키워드로 시도해보세요.</div>
+
+        <!-- 검색 결과 패널 -->
+        <div id="searchResultsPanel">
+            <h3>🔎 검색 결과: <span id="searchQueryDisplay"></span></h3>
+            <div id="searchResultsContent"></div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- 1. ALL SUBJECTS (9 CATEGORIES) -->
+        <!-- ============================================================ -->
+        <section id="subjects">
+            <h2 class="section-title">📚 전체 학과 분류 <span>Click for Detail</span></h2>
+            <p class="section-desc">인문학부터 STEM, 의학, 교육학까지, 영국 대학에서 제공하는 주요 학문 분야와 각 분야별 추천 AP, 진학 전략, 추천 도서 및 리소스를 제공합니다.</p>
+            <div class="dept-grid">
+                <div class="dept-card search-item" data-search="인문학 문학 역사 철학 언어학" onclick="openSubjectModal('humanities')">
+                    <h4>📖 인문학</h4>
+                    <p>영문학 · 역사 · 철학 · 언어학 · 고전학</p>
+                </div>
+                <div class="dept-card search-item" data-search="사회과학 경제학 심리학 정치학 국제관계" onclick="openSubjectModal('social')">
+                    <h4>🌍 사회과학</h4>
+                    <p>경제학 · 심리학 · 정치학 · 국제관계 · 사회학</p>
+                </div>
+                <div class="dept-card search-item" data-search="예술 디자인 미술 건축 음악" onclick="openSubjectModal('arts')">
+                    <h4>🎨 예술 · 디자인</h4>
+                    <p>순수미술 · 건축 · 디자인 · 음악 · 연극</p>
+                </div>
+                <div class="dept-card search-item" data-search="경영 비즈니스 마케팅 재무" onclick="openSubjectModal('business')">
+                    <h4>📊 경영 · 경제</h4>
+                    <p>경영학 · 재무 · 마케팅 · 회계 · 국제경영</p>
+                </div>
+                <div class="dept-card search-item" data-search="법학 법률 Law" onclick="openSubjectModal('law')">
+                    <h4>⚖️ 법학</h4>
+                    <p>영국법 · 국제법 · 상법 · 인권법</p>
+                </div>
+                <div class="dept-card search-item" data-search="STEM 공학 자연과학 컴퓨터 물리 화학 생물" onclick="openSubjectModal('stem')">
+                    <h4>🔬 STEM (공학·자연)</h4>
+                    <p>컴퓨터공학 · 기계공학 · 생명과학 · 물리 · 화학</p>
+                </div>
+                <div class="dept-card search-item" data-search="의학 간호 보건" onclick="openSubjectModal('medicine')">
+                    <h4>🏥 의학 · 보건</h4>
+                    <p>의학 · 간호 · 치의학 · 수의학 · 공중보건</p>
+                </div>
+                <div class="dept-card search-item" data-search="교육학 교육" onclick="openSubjectModal('education')">
+                    <h4>📚 교육학</h4>
+                    <p>교육 · TESOL · 국제교육 · 교육심리</p>
+                </div>
+                <div class="dept-card search-item" data-search="수의학" onclick="openSubjectModal('veterinary')">
+                    <h4>🐾 수의학</h4>
+                    <p>수의학 · 동물과학 · 수의간호</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 2. STEM MAJORS -->
+        <!-- ============================================================ -->
+        <section>
+            <h2 class="section-title">🔬 STEM 심층 분석 <span>Top 전공</span></h2>
+            <p class="section-desc">영국 명문대의 STEM 전공별 AP 필수조건, 세부 트랙, 졸업 후 진로, 연구 기회까지 확장된 정보.</p>
+            <div class="major-grid" id="majorGrid">
+                <div class="major-card search-item" data-search="컴퓨터공학 소프트웨어 AI 머신러닝" onclick="openModal('cs')">
+                    <div class="icon">💻</div>
+                    <h3>Computer Science</h3>
+                    <span class="badge">AP 필수: Calc BC, CS A, Stats</span>
+                    <p>AI, 소프트웨어 공학, 데이터 사이언스, 로보틱스. 영국 Top5 대학 집중 분석.</p>
+                    <div class="click-hint">클릭하여 상세 보기 →</div>
+                </div>
+                <div class="major-card search-item" data-search="기계공학 로봇 항공우주 자동차" onclick="openModal('mech')">
+                    <div class="icon">⚙️</div>
+                    <h3>Mechanical Engineering</h3>
+                    <span class="badge">AP 필수: Calc BC, Physics C (Mech+E&M)</span>
+                    <p>로보틱스, 에너지, 항공우주, 자동차 공학. 임페리얼, 맨체스터 강세.</p>
+                    <div class="click-hint">클릭하여 상세 보기 →</div>
+                </div>
+                <div class="major-card search-item" data-search="전자전기공학 반도체 통신" onclick="openModal('ee')">
+                    <div class="icon">🔌</div>
+                    <h3>Electrical & Electronic Eng.</h3>
+                    <span class="badge">AP 필수: Calc BC, Physics C (E&M)</span>
+                    <p>반도체, 통신, 임베디드 시스템, 전력공학. UCL, 서리 대학 주목.</p>
+                    <div class="click-hint">클릭하여 상세 보기 →</div>
+                </div>
+                <div class="major-card search-item" data-search="화학공학 석유 신소재" onclick="openModal('chemeng')">
+                    <div class="icon">🧪</div>
+                    <h3>Chemical Engineering</h3>
+                    <span class="badge">AP 필수: Calc BC, Chemistry, Physics</span>
+                    <p>에너지, 신소재, 바이오공정, 환경공학. 케임브리지, 임페리얼 최고.</p>
+                    <div class="click-hint">클릭하여 상세 보기 →</div>
+                </div>
+                <div class="major-card search-item" data-search="생명과학 생물 의학 유전학" onclick="openModal('bio')">
+                    <div class="icon">🧬</div>
+                    <h3>Biological Sciences</h3>
+                    <span class="badge">AP 필수: Biology, Chemistry, Stats</span>
+                    <p>유전학, 신경과학, 생물정보학, 생화학. 옥스포드, KCL 명문.</p>
+                    <div class="click-hint">클릭하여 상세 보기 →</div>
+                </div>
+                <div class="major-card search-item" data-search="물리학 천문학 양자" onclick="openModal('physics')">
+                    <div class="icon">🌌</div>
+                    <h3>Physics & Astronomy</h3>
+                    <span class="badge">AP 필수: Physics C (Mech+E&M), Calc BC</span>
+                    <p>양자물리, 우주과학, 응용물리, 천체물리. 맨체스터, 에딘버러 강세.</p>
+                    <div class="click-hint">클릭하여 상세 보기 →</div>
+                </div>
+                <div class="major-card search-item" data-search="수학 통계" onclick="openModal('math')">
+                    <div class="icon">📐</div>
+                    <h3>Mathematics & Statistics</h3>
+                    <span class="badge">AP 필수: Calc BC, Stats</span>
+                    <p>순수수학, 응용수학, 통계학, 금융수학. Cambridge, Warwick, Oxford 강세.</p>
+                    <div class="click-hint">클릭하여 상세 보기 →</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 3. AP ROADMAP -->
+        <!-- ============================================================ -->
+        <section id="roadmap">
+            <h2 class="section-title">📅 초밀착 AP 입시 로드맵 <span>연도별 플랜</span></h2>
+            <p class="section-desc">한국 학년 기준, AP · SAT · 입학시험 · Personal Statement까지 모두 아우르는 확장된 타임라인.</p>
+            <div class="accordion" id="roadmapAccordion">
+                <div class="accordion-item search-item" data-search="10학년 예비 단계 탐색">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>🔹 10학년 (예비) – 기초 & 탐색</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <ul>
+                            <li><strong>✔ 진로 탐색:</strong> 온라인 강의(Coursera, edX)와 서적으로 관심 분야를 넓힙니다. 영국 대학의 전공 홈페이지를 정기적으로 방문하여 커리큘럼을 살펴보세요.</li>
+                            <li><strong>✔ 내신 관리:</strong> 수학(Pre-Calc), 과학(Physics/Chem/Bio), 영어(AP Lang 기초) 내신 <span class="highlight">A / A*</span> 목표. 영국 대학은 내신을 매우 중요하게 평가합니다.</li>
+                            <li><strong>✔ AP 예비 선택:</strong> 11학년에 응시할 AP 2~3과목을 미리 선정합니다. STEM은 Calc AB/BC, 인문은 AP English Lit, History를 고려하세요.</li>
+                            <li><strong>✔ 영어 기초:</strong> IELTS 6.0+ 또는 TOEFL 90+를 목표로 리딩/라이팅 집중 훈련을 시작합니다.</li>
+                            <li><strong>✔ 비교과:</strong> 전공 관련 동아리, 독서 토론 모임, 자원봉사 활동을 장기적으로 시작합니다.</li>
+                            <li><strong>✔ 추천 도서:</strong> 전공 관련 입문서 3~5권을 읽고 간단한 독서 노트를 작성해보세요. Personal Statement에 큰 도움이 됩니다.</li>
+                            <li><strong>✔ 대학 탐색:</strong> UCAS 사이트에서 대학 검색을 시작하고, 각 대학의 입학 요강을 PDF로 저장해 두세요.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="accordion-item search-item" data-search="11학년 본격 준비 AP 시험 SAT">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>🔹 11학년 (본격) – AP 3~5과목 + SAT</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <ul>
+                            <li><strong>📌 AP 과목 확정:</strong> 목표 전공에 맞춰 필수 AP를 선정합니다. 11학년 9월까지 과목을 확정하고, 학교의 AP 과정을 수강하거나 자가 학습 계획을 세우세요.</li>
+                            <li><strong>📌 5월 AP 시험:</strong> 모든 과목 <span class="highlight">5점</span>을 목표로 집중 준비합니다. AP Classroom과 Barron's, Princeton Review 교재를 활용하세요.</li>
+                            <li><strong>📌 SAT/ACT 병행:</strong> 상위권 대학(옥스브리지, LSE, 임페리얼)은 SAT 1450+ 또는 ACT 32+를 요구합니다. 11학년 겨울방학에 첫 시험을 보는 것을 추천합니다.</li>
+                            <li><strong>📌 심화 활동:</strong> 서머 스쿨(Oxford Summer School, Imperial Summer School), 연구 프로젝트, 랩 인턴십, 온라인 코스 수료 등을 통해 전문성을 쌓습니다.</li>
+                            <li><strong>📌 Personal Statement 브레인스토밍:</strong> 자신만의 학문적 스토리와 경험을 정리하기 시작합니다. 11학년 말까지 초안을 완성하는 것이 목표입니다.</li>
+                            <li><strong>📌 대학 탐색 심화:</strong> 각 대학의 오픈 데이(온라인/오프라인)에 참여하여 학과 교수진과 학생들의 의견을 청취하세요.</li>
+                            <li><strong>📌 추천서 준비:</strong> 11학년 가을에 추천서를 써줄 교사 2명에게 미리 요청하고, 자신의 활동과 성취를 정리한 CV를 제공하세요.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="accordion-item search-item" data-search="12학년 지원 시즌 UCAS Personal Statement 인터뷰">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>🔹 12학년 (지원) – UCAS + 입학시험 + 인터뷰</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <ul>
+                            <li><strong>📌 9월 초:</strong> UCAS 계정 생성 및 Personal Statement 최종본을 완성합니다. 2026년부터는 3개 질문 형식으로 변경되므로, 각 질문에 600~800자로 답변을 준비하세요.</li>
+                            <li><strong>📌 10월 15일:</strong> 옥스브리지 & 의대 마감 (ESAT, MAT, PAT, LNAT, TSA, UCAT, BMAT 등). 늦어도 8월까지 시험 준비를 완료해야 합니다.</li>
+                            <li><strong>📌 11~12월:</strong> 인터뷰 준비 (모의 인터뷰 3회 이상). 인터뷰는 보통 11월 말~12월 중순에 진행됩니다.</li>
+                            <li><strong>📌 1월 29일:</strong> 일반 전공 UCAS 마감. 모든 AP/ SAT 성적을 UCAS에 공식 송부합니다.</li>
+                            <li><strong>📌 2~5월:</strong> 컨디셔널 오퍼 수령 및 최종 대학 선택 (Firm & Insurance 선택). 오퍼 조건을 꼼꼼히 확인하세요.</li>
+                            <li><strong>📌 6~8월:</strong> 비자 준비, 기숙사 신청, 항공권 예약, 출국 준비. NHS 등록, 은행 계좌 개설 등 생활 준비도 시작하세요.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 4. QUALIFICATION TABS -->
+        <!-- ============================================================ -->
+        <section>
+            <h2 class="section-title">📊 AP · A-Level · IB 비교 <span>전공별 매칭</span></h2>
+            <p class="section-desc">영국 대학은 AP를 A-Level과 동등하게 인정합니다. 인문/사회/STEM 전공 기준 상세 비교.</p>
+            <div class="tabs-container">
+                <div class="tabs-header">
+                    <button class="tab-btn active" onclick="switchTab(event, 'tabAP')">🇺🇸 AP</button>
+                    <button class="tab-btn" onclick="switchTab(event, 'tabALevel')">🇬🇧 A-Level</button>
+                    <button class="tab-btn" onclick="switchTab(event, 'tabIB')">🌍 IB</button>
+                </div>
+                <div id="tabAP" class="tab-content active">
+                    <h3>✅ AP: 한국 학생에게 가장 유연한 루트</h3>
+                    <ul>
+                        <li><strong>장점:</strong> 과목별 집중 학습, 미국/캐나다 대학과 동시 지원 가능. 한국 국제학교/학원 인프라 풍부.</li>
+                        <li><strong>인문/사회:</strong> 3~4과목 5점 (English Lit, History, Macro 등). LSE는 AP Economics를 중요시합니다.</li>
+                        <li><strong>STEM:</strong> 3~5과목 5점 (Calc BC, Physics C, Chemistry, Biology). Imperial은 4과목 5점을 기본으로 봅니다.</li>
+                        <li><strong>환산:</strong> AP 5점 = A-Level A* = IB HL 7. UCAS Tariff: 5점=56점, 4점=48점, 3점=32점.</li>
+                        <li><strong>추천 조합:</strong> STEM: Calc BC, Physics C (Mech+E&M), Chemistry/CS A, Stats. 인문: Lit, Lang, History, Psychology.</li>
+                    </ul>
+                    <table>
+                        <tr><th>AP 점수</th><th>UCAS Tariff</th><th>A-Level</th><th>IB HL</th></tr>
+                        <tr><td>5</td><td>56</td><td>A*</td><td>7</td></tr>
+                        <tr><td>4</td><td>48</td><td>A</td><td>6</td></tr>
+                        <tr><td>3</td><td>32</td><td>C</td><td>5</td></tr>
+                    </table>
+                </div>
+                <div id="tabALevel" class="tab-content">
+                    <h3>✅ A-Level: 영국 본토 교육과정</h3>
+                    <ul>
+                        <li><strong>특징:</strong> 2년 과정, 3~4과목 집중 이수. 심화 이론에 방점. 영국 대학이 가장 익숙한 자격증.</li>
+                        <li><strong>인문:</strong> English Literature, History, Philosophy 등. 에세이 기반 평가가 많음.</li>
+                        <li><strong>STEM:</strong> 수학, 물리/화학/생물 중 2과목 이상. Further Mathematics는 매우 선호됨.</li>
+                        <li><strong>AP와의 차이:</strong> A-Level은 깊이 있는 지식 평가, AP는 폭넓은 커리큘럼과 문제 해결 능력 중시.</li>
+                    </ul>
+                </div>
+                <div id="tabIB" class="tab-content">
+                    <h3>✅ IB: 종합적 사고 훈련</h3>
+                    <ul>
+                        <li><strong>특징:</strong> 6과목 + EE/TOK/CAS 필수. 전인적 교육. 영국 대학이 높이 평가.</li>
+                        <li><strong>인문:</strong> HL English/History에서 7점 획득이 관건. 에세이와 비판적 사고가 중요.</li>
+                        <li><strong>STEM:</strong> HL 수학/과학에서 7점 필수. 매우 높은 난이도.</li>
+                        <li><strong>AP 대비:</strong> IB는 에세이 및 비판적 사고, AP는 특정 과목 전문성에 강점.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 5. UNIVERSITY DEPARTMENT DIRECTORY (25+ 대학) -->
+        <!-- ============================================================ -->
+        <section id="uni-dept">
+            <h2 class="section-title">🏛️ 대학별 학과 디렉토리 <span>25+ 대학</span></h2>
+            <p class="section-desc">영국 Top 25+ 대학의 학과별 AP/A-Level 요구조건, 입학시험, 특징, 공식 링크를 집중 해부합니다.</p>
+            <div class="uni-table-wrap">
+                <table>
+                    <thead>
+                        <tr><th>대학</th><th>주요 강세 분야</th><th>대표 학과</th><th>AP/입학 조건</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr class="uni-row-click search-item" data-search="케임브리지 캠브리지 Cambridge" onclick="openUniDeptModal('cam')">
+                            <td><strong>Cambridge</strong></td>
+                            <td>STEM, 인문, 법학</td>
+                            <td>자연과학, 공학, CS, 영문학</td>
+                            <td><span class="view-detail">5 AP 5점 + ESAT/CLT</span></td>
+                        </tr>
+                        <tr class="uni-row-click search-item" data-search="옥스포드 Oxford" onclick="openUniDeptModal('ox')">
+                            <td><strong>Oxford</strong></td>
+                            <td>인문, 사회, STEM</td>
+                            <td>PPE, 법학, 물리, 수학, 영문학</td>
+                            <td><span class="view-detail">3-4 AP 5점 + MAT/PAT/TSA/LNAT</span></td>
+                        </tr>
+                        <tr class="uni-row-click search-item" data-search="임페리얼 Imperial" onclick="openUniDeptModal('imp')">
+                            <td><strong>Imperial</strong></td>
+                            <td>STEM (공학, 의과학)</td>
+                            <td>기계공학, EEE, CS, 생의학</td>
+                            <td><span class="view-detail">3-4 AP 5점 + ESAT</span></td>
+                        </tr>
+                        <tr class="uni-row-click search-item" data-search="LSE London School of Economics" onclick="openUniDeptModal('lse')">
+                            <td><strong>LSE</strong></td>
+                            <td>경제학, 정치학, 사회과학</td>
+                            <td>경제학, 국제관계, 재무, 심리학</td>
+                            <td><span class="view-detail">3-4 AP 5점 + SAT 1450+</span></td>
+                        </tr>
+                        <tr class="uni-row-click search-item" data-search="UCL" onclick="openUniDeptModal('ucl')">
+                            <td><strong>UCL</strong></td>
+                            <td>전 분야 (대규모 종합)</td>
+                            <td>건축, 법학, 경제, 생물, 물리</td>
+                            <td><span class="view-detail">3 AP 5,5,5 + SAT 권장</span></td>
+                        </tr>
+                        <tr class="uni-row-click search-item" data-search="KCL King's College" onclick="openUniDeptModal('kcl')">
+                            <td><strong>King's College London</strong></td>
+                            <td>법학, 의학, 인문</td>
+                            <td>법학, 심리학, 영문학, 전쟁학</td>
+                            <td><span class="view-detail">3 AP 5,4,4 + LNAT</span></td>
+                        </tr>
+                        <tr class="uni-row-click search-item" data-search="맨체스터 Manchester" onclick="openUniDeptModal('man')">
+                            <td><strong>Manchester</strong></td>
+                            <td>STEM, 경영</td>
+                            <td>기계공학, 물리, 경영, 화학</td>
+                            <td><span class="view-detail">3 AP 5,5,5</span></td>
+                        </tr>
+                        <tr class="uni-row-click search-item" data-search="워윅 Warwick" onclick="openUniDeptModal('war')">
+                            <td><strong>Warwick</strong></td>
+                            <td>수학, 경제, 경영</td>
+                            <td>수학, MORSE, 경제학, CS</td>
+                            <td><span class="view-detail">3 AP 5,4,4 + SAT 권장</span></td>
+                        </tr>
+                        <tr class="uni-row-click search-item" data-search="에든버러 Edinburgh" onclick="openUniDeptModal('edi')">
+                            <td><strong>Edinburgh</strong></td>
+                            <td>인문, STEM, 의학</td>
+                            <td>철학, 물리, 생물, AI</td>
+                            <td><span class="view-detail">3 AP 5,4,4 (4년제)</span></td>
+                        </tr>
+                        <tr class="uni-row-click search-item" data-search="더럼 Durham" onclick="openUniDeptModal('dur')">
+                            <td><strong>Durham</strong></td>
+                            <td>인문, 법학, 사회</td>
+                            <td>영문학, 역사, 법학, 음악</td>
+                            <td><span class="view-detail">3 AP 5,5,4</span></td>
+                        </tr>
+                        <tr class="uni-row-click search-item" data-search="임페리얼 다이슨 디자인 Design Engineering Dyson" onclick="openUniDeptModal('dyson')">
+                            <td><strong>Imperial Dyson</strong></td>
+                            <td>디자인 엔지니어링</td>
+                            <td>Design Engineering, 혁신, 제품디자인</td>
+                            <td><span class="view-detail">4 AP 5점 + 포트폴리오</span></td>
+                        </tr>
+                        <tr class="uni-row-click search-item" data-search="Bristol" onclick="openUniDeptModal('bristol')">
+                            <td><strong>Bristol</strong></td>
+                            <td>STEM, 영화, 법학</td>
+                            <td>기계공학, 영화제작, 법학</td>
+                            <td><span class="view-detail">3 AP 5,4,4</span></td>
+                        </tr>
+                        <tr class="uni-row-click search-item" data-search="Southampton" onclick="openUniDeptModal('soton')">
+                            <td><strong>Southampton</strong></td>
+                            <td>공학, 컴퓨터, 해양학</td>
+                            <td>EEE, CS, 해양공학</td>
+                            <td><span class="view-detail">3 AP 5,5,5 또는 2 AP 5,5 + SAT 1350+</span></td>
+                        </tr>
+                        <tr class="uni-row-click search-item" data-search="Bath" onclick="openUniDeptModal('bath')">
+                            <td><strong>Bath</strong></td>
+                            <td>경영, 공학, 건축</td>
+                            <td>경영학, 기계공학, 건축</td>
+                            <td><span class="view-detail">3 AP 4+</span></td>
+                        </tr>
+                        <tr class="uni-row-click search-item" data-search="St Andrews" onclick="openUniDeptModal('standrews')">
+                            <td><strong>St Andrews</strong></td>
+                            <td>인문, 사회, 국제관계</td>
+                            <td>국제관계, 영문학, 철학, 물리</td>
+                            <td><span class="view-detail">3 AP 5,4,4</span></td>
+                        </tr>
+                        <tr class="uni-row-click search-item" data-search="Leeds" onclick="openUniDeptModal('leeds')">
+                            <td><strong>Leeds</strong></td>
+                            <td>경영, 언론, 법학</td>
+                            <td>경영학, 저널리즘, 법학</td>
+                            <td><span class="view-detail">3 AP 5,4,4</span></td>
+                        </tr>
+                        <tr class="uni-row-click search-item" data-search="Sheffield" onclick="openUniDeptModal('sheffield')">
+                            <td><strong>Sheffield</strong></td>
+                            <td>공학, 저널리즘, 건축</td>
+                            <td>기계공학, 저널리즘, 건축</td>
+                            <td><span class="view-detail">3 AP 5,4,4</span></td>
+                        </tr>
+                        <tr class="uni-row-click search-item" data-search="Nottingham" onclick="openUniDeptModal('nottingham')">
+                            <td><strong>Nottingham</strong></td>
+                            <td>법학, 경영, 약학</td>
+                            <td>법학, 경영학, 약학</td>
+                            <td><span class="view-detail">3 AP 5,4,4</span></td>
+                        </tr>
+                        <tr class="uni-row-click search-item" data-search="Birmingham" onclick="openUniDeptModal('birmingham')">
+                            <td><strong>Birmingham</strong></td>
+                            <td>경영, 법학, 의학</td>
+                            <td>경영학, 법학, 의학</td>
+                            <td><span class="view-detail">3 AP 5,5,5</span></td>
+                        </tr>
+                        <tr class="uni-row-click search-item" data-search="Coventry" onclick="openUniDeptModal('coventry')">
+                            <td><strong>Coventry</strong></td>
+                            <td>디자인, 공학, 경영</td>
+                            <td>자동차공학, 디자인, 경영</td>
+                            <td><span class="view-detail">AP 인정 (조건부)</span></td>
+                        </tr>
+                        <tr class="uni-row-click search-item" data-search="Glasgow" onclick="openUniDeptModal('glasgow')">
+                            <td><strong>Glasgow</strong></td>
+                            <td>의학, 법학, 공학</td>
+                            <td>의학, 법학, 공학</td>
+                            <td><span class="view-detail">3 AP 5,4,4</span></td>
+                        </tr>
+                        <tr class="uni-row-click search-item" data-search="Newcastle" onclick="openUniDeptModal('newcastle')">
+                            <td><strong>Newcastle</strong></td>
+                            <td>의학, 공학, 농학</td>
+                            <td>의학, 기계공학, 농학</td>
+                            <td><span class="view-detail">3 AP 5,4,4</span></td>
+                        </tr>
+                        <tr class="uni-row-click search-item" data-search="Loughborough" onclick="openUniDeptModal('loughborough')">
+                            <td><strong>Loughborough</strong></td>
+                            <td>스포츠과학, 공학, 디자인</td>
+                            <td>스포츠과학, 기계공학, 디자인</td>
+                            <td><span class="view-detail">3 AP 5,4,4</span></td>
+                        </tr>
+                        <tr class="uni-row-click search-item" data-search="York" onclick="openUniDeptModal('york')">
+                            <td><strong>York</strong></td>
+                            <td>인문, 사회, 생물</td>
+                            <td>영문학, 심리학, 생물학</td>
+                            <td><span class="view-detail">3 AP 5,4,4</span></td>
+                        </tr>
+                        <tr class="uni-row-click search-item" data-search="Exeter" onclick="openUniDeptModal('exeter')">
+                            <td><strong>Exeter</strong></td>
+                            <td>경영, 법학, 생물</td>
+                            <td>경영학, 법학, 생물학</td>
+                            <td><span class="view-detail">3 AP 5,4,4</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 5-1. IMPERIAL DYSON SCHOOL -->
+        <!-- ============================================================ -->
+        <section id="dyson">
+            <h2 class="section-title">🎯 Imperial Dyson School of Design Engineering <span>특별 섹션</span></h2>
+            <p class="section-desc">임페리얼 칼리지 내 혁신적인 디자인 엔지니어링 학부. AP, 포트폴리오, 인터뷰까지 완벽 가이드.</p>
+            <div class="uni-table-wrap" style="border-left: 6px solid var(--gold);">
+                <div style="padding:2rem; background:white;">
+                    <h3 style="color:var(--navy);">🚀 Dyson School of Design Engineering</h3>
+                    <p style="margin:1rem 0;"><strong>📍 Imperial College London 내 위치</strong> · 세계 최초의 디자인 엔지니어링 학부 (James Dyson 재단 지원)</p>
+                    <ul>
+                        <li><strong>학위 과정:</strong> MEng Design Engineering (4년 통합), MSc Human and Biological Robotics, MSc Cleantech Innovation 등.</li>
+                        <li><strong>핵심 철학:</strong> 공학적 깊이 + 창의적 디자인 사고 + 기업가 정신. 실제 제품 개발 프로세스를 교육합니다.</li>
+                        <li><strong>커리큘럼:</strong> 1~2년차 공학 기초(수학, 역학, 재료, 프로그래밍) + 디자인 스튜디오, 3~4년차 전공 심화 및 졸업 프로젝트(실제 산업 문제 해결).</li>
+                        <li><strong>연구 분야:</strong> 지속 가능한 디자인, 휴먼-로봇 상호작용, 스마트 머티리얼, 디자인 싱킹, 헬스케어 디자인.</li>
+                        <li><strong>교수진:</strong> James Dyson을 비롯한 업계 전문가와 세계적 연구자들이 직접 강의합니다.</li>
+                    </ul>
+                    <h4>🎯 AP 입학 조건 (2026 기준)</h4>
+                    <ul>
+                        <li><strong>최소 4과목 AP 5점</strong> (Calc BC, Physics C (Mech), Chemistry 또는 Biology, 그리고 Statistics 또는 CS A 권장).</li>
+                        <li><strong>SAT:</strong> 1480+ (또는 ACT 33+) 강력히 권장.</li>
+                        <li><strong>포트폴리오:</strong> 디자인 과정을 보여주는 10~15개 작품 (스케치, 3D 모델, 프로토타입, 코딩 프로젝트 등).</li>
+                        <li><strong>입학시험:</strong> ESAT (Engineering and Science Admissions Test) 응시 필수.</li>
+                        <li><strong>인터뷰:</strong> 디자인 사고와 공학적 문제 해결 능력을 평가하는 1:1 심층 면접.</li>
+                    </ul>
+                    <p><a href="https://www.imperial.ac.uk/design-engineering" target="_blank" class="official-link">🔗 Imperial Dyson School 공식 웹사이트</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 6. ESAT / TMUA 시험 섹션 -->
+        <!-- ============================================================ -->
+        <section id="exams">
+            <h2 class="section-title">📝 ESAT · TMUA 입학시험 완전 정복 <span>2026 대비</span></h2>
+            <p class="section-desc">케임브리지, 임페리얼, UCL 등 상위권 대학 STEM/수학/경제 전공 합격의 관문인 ESAT과 TMUA를 집중 해부합니다.</p>
+
+            <div style="background:white; border-radius:var(--border-radius); padding:2rem; box-shadow:var(--shadow); margin-bottom:2rem;">
+                <h3 style="color:var(--navy);">⚡ ESAT (Engineering and Science Admissions Test)</h3>
+                <p><strong>📌 2024년부터 ENGAA/NSAA를 대체. 케임브리지 & 임페리얼 공학/자연과학 필수.</strong> 2025년부터 UCL 전자전기공학(EEE)도 ESAT 도입.</p>
+                <ul>
+                    <li><strong>대상:</strong> 케임브리지(공학, 자연과학, 수의학, 화학공학·생명공학), 임페리얼(공학, 물리, Dyson School), UCL(EEE).</li>
+                    <li><strong>시험 일정:</strong> 2026년 10월 12~16일 (10월 15일 마감 지원자 필수). 중국·홍콩·마카오 지원자는 10월 12~13일 응시.</li>
+                    <li><strong>등록 마감:</strong> 2026년 9월 28일.</li>
+                    <li><strong>시험 형식:</strong> 컴퓨터 기반, 총 120분, 각 40분의 모듈로 구성.</li>
+                    <li><strong>필수 모듈:</strong> <span class="highlight">Mathematics 1</span> (모든 지원자 필수).</li>
+                    <li><strong>선택 모듈 (2개):</strong> Mathematics 2, Physics, Chemistry, Biology 중 선택.
+                        <ul>
+                            <li><em>Engineering 지원:</em> Mathematics 1 + Physics + Mathematics 2</li>
+                            <li><em>Natural Sciences/Chemical Engineering/Veterinary Medicine:</em> Mathematics 1 + 2개 모듈 (Biology/Chemistry/Physics/Mathematics 2 중)</li>
+                        </ul>
+                    </li>
+                    <li><strong>채점:</strong> 틀린 답에 대한 감점 없음. 모든 문제에 답변하는 것이 유리.</li>
+                    <li><strong>비용:</strong> 응시료 발생. 재정적 지원이 필요한 UK 지원자는 Bursary Voucher 신청 가능 (2026년 6월 1일~9월 21일).</li>
+                    <li><strong>문제 유형 예시:</strong> 미적분, 역학, 전자기학, 화학 반응, 생물학적 시스템 모델링 등 AP 수준의 심화 문제와 추론형 문제가 출제됩니다.</li>
+                </ul>
+                <h4 style="margin-top:1.5rem;">📚 ESAT 공식 준비 자료</h4>
+                <ul>
+                    <li><strong>🔗 공식 사이트:</strong> <a href="https://esat-tmua.ac.uk/" target="_blank" class="official-link">https://esat-tmua.ac.uk/</a></li>
+                    <li><strong>📄 시험 규격 (Test Specification):</strong> <a href="https://esat-tmua.ac.uk/prepare/" target="_blank" class="official-link">공식 준비 페이지</a>에서 확인 가능</li>
+                    <li><strong>📝 샘플 테스트:</strong> Pearson VUE 테스트 플레이어로 실제 시험 환경 체험 가능</li>
+                    <li><strong>📂 기출 문제 (ENGAA/NSAA 아카이브):</strong> ESAT은 ENGAA와 NSAA의 문제 유형을 계승
+                        <ul>
+                            <li><a href="https://esat.org.cn/resources" target="_blank" class="download-link">📥 ENGAA/NSAA 기출문제 다운로드 (2016-2023)</a></li>
+                            <li><a href="https://esat.org.cn/resources" target="_blank" class="download-link">📥 ESAT 모의고사 샘플</a></li>
+                        </ul>
+                    </li>
+                    <li><strong>📘 ESAT Revision Guide 2026:</strong> 완전 정리된 27페이지 가이드 (Maths & Physics)</li>
+                </ul>
+            </div>
+
+            <div style="background:white; border-radius:var(--border-radius); padding:2rem; box-shadow:var(--shadow); margin-bottom:2rem;">
+                <h3 style="color:var(--navy);">🧮 TMUA (Test of Mathematics for University Admission)</h3>
+                <p><strong>📌 수학적 사고 능력을 평가하는 시험. 케임브리지, 임페리얼, LSE, 워윅 등 수학/CS/경제 전공 지원자 필수.</strong></p>
+                <ul>
+                    <li><strong>대상:</strong> 케임브리지(Computer Science, Economics, Mathematics), 임페리얼(수학/CS 관련), LSE(경제학/수학 관련), Warwick(수학/MORSE) 등.</li>
+                    <li><strong>시험 일정:</strong> 2026년 10월 12~16일 (10월 15일 마감 지원자 필수).</li>
+                    <li><strong>등록 마감:</strong> 2026년 9월 28일.</li>
+                    <li><strong>시험 형식:</strong> 총 2시간 30분, 2개 파트로 구성.
+                        <ul>
+                            <li><strong>Paper 1:</strong> Applications of Mathematical Knowledge (75분, 20문항)</li>
+                            <li><strong>Paper 2:</strong> Mathematical Reasoning (75분, 20문항)</li>
+                        </ul>
+                    </li>
+                    <li><strong>계산기 사용:</strong> 불가</li>
+                    <li><strong>채점:</strong> 틀린 답에 대한 감점 없음.</li>
+                    <li><strong>지식 범위:</strong> AS-Level 수학 및 Higher Level GCSE 수학 내용 기반. 논리와 증명(Logic and Proof) 영역이 포함됨.</li>
+                    <li><strong>목표 점수:</strong> 케임브리지/임페리얼은 6.5~7.0 이상이 일반적. Grade 7.0은 상위 10% 수준.</li>
+                    <li><strong>문제 유형 예시:</strong> 함수 해석, 미분 방정식, 확률, 논리 추론, 증명 작성 등 수학적 사고력을 종합적으로 평가합니다.</li>
+                </ul>
+                <h4 style="margin-top:1.5rem;">📚 TMUA 공식 준비 자료</h4>
+                <ul>
+                    <li><strong>🔗 공식 사이트:</strong> <a href="https://esat-tmua.ac.uk/" target="_blank" class="official-link">https://esat-tmua.ac.uk/</a></li>
+                    <li><strong>📄 시험 규격 (Test Specification):</strong> <a href="https://tmua.academy/resources/tmua-test-specification.pdf" target="_blank" class="download-link">📥 TMUA Test Specification PDF 다운로드</a></li>
+                    <li><strong>📘 Notes on Logic and Proof:</strong> <a href="https://tmua.academy/resources/notes-on-logic-and-proof.pdf" target="_blank" class="download-link">📥 Logic and Proof PDF 다운로드</a></li>
+                    <li><strong>📘 Notes on Mathematics:</strong> <a href="https://tmua.academy/resources/notes-on-mathematics.pdf" target="_blank" class="download-link">📥 Mathematics Notes PDF 다운로드</a></li>
+                    <li><strong>📂 TMUA 기출문제 (2017-2024):</strong> <a href="https://tmua.academy/resources" target="_blank" class="download-link">📥 TMUA 기출문제 및 채점 기준</a></li>
+                    <li><strong>🎯 Pearson VUE Mock Exam Simulator:</strong> 실제 시험 인터페이스로 연습 가능</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 7. EC / 대회 가이드 (20+ 대회 + 추가 설명) -->
+        <!-- ============================================================ -->
+        <section id="ec-guide">
+            <h2 class="section-title">🏆 과목별 EC 추천 대회 20+ <span>링크 & 설명</span></h2>
+            <p class="section-desc">영국 대학 입시에서 강력한 경쟁력을 갖춰주는 국제 및 영국 내 주요 경시대회를 과목별로 정리했습니다.</p>
+
+            <div style="background:white; border-radius:var(--border-radius); padding:2rem; box-shadow:var(--shadow); margin-bottom:2rem;">
+                <h3 style="color:var(--navy);">🧮 수학 (Mathematics)</h3>
+                <ul>
+                    <li><strong>UKMT (United Kingdom Mathematics Trust)</strong> – 영국 최대 규모의 수학 경시대회. 매년 60만 명 이상 참가. <a href="https://ukmt.org.uk/" target="_blank" class="official-link">공식 사이트</a> </li>
+                    <li><strong>BMO (British Mathematical Olympiad)</strong> – UKMT 상위권 학생 대상, 영국 대표 선발전. Round 1과 Round 2로 구성. <a href="https://bmo.ukmt.org.uk/" target="_blank" class="official-link">공식 사이트</a> </li>
+                    <li><strong>IMO (International Mathematical Olympiad)</strong> – 세계 최고 권위의 수학 올림피아드. 100개 이상 국가 참가. <a href="https://www.imo-official.org/" target="_blank" class="official-link">공식 사이트</a> </li>
+                    <li><strong>AMC (American Mathematics Competitions)</strong> – 미국 수학 경시대회, 영국 국제학교에서도 응시 가능. AMC 10/12, AIME, USAMO로 이어짐. <a href="https://maa.org/amc" target="_blank" class="official-link">공식 사이트</a></li>
+                    <li><strong>Euclid Contest (University of Waterloo)</strong> – 캐나다 워털루 대학 주관, 국제적 인지도 높음. <a href="https://cemc.uwaterloo.ca/contests/euclid.html" target="_blank" class="official-link">공식 사이트</a></li>
+                </ul>
+                <h3 style="color:var(--navy);">⚛️ 물리 (Physics)</h3>
+                <ul>
+                    <li><strong>BPhO (British Physics Olympiad)</strong> – 옥스포드 대학 물리학과 주관, 영국 최고 권위 물리 경시대회. Round 1 (11월), Round 2 (1월). <a href="https://www.bpho.org.uk/" target="_blank" class="official-link">공식 사이트</a> </li>
+                    <li><strong>IPhO (International Physics Olympiad)</strong> – 국제 물리 올림피아드. 이론 및 실험 평가. <a href="https://www.ipho.org/" target="_blank" class="official-link">공식 사이트</a></li>
+                    <li><strong>Physics Bowl</strong> – 미국 물리 교사 협회(AAPT) 주관, 전 세계 10,000명 이상 참가. <a href="https://www.aapt.org/physicsteam/" target="_blank" class="official-link">공식 사이트</a></li>
+                </ul>
+                <h3 style="color:var(--navy);">🧪 화학 (Chemistry)</h3>
+                <ul>
+                    <li><strong>Cambridge Chemistry Challenge (C3L6)</strong> – 케임브리지 대학 주관, Year 12 대상. 90분 컴퓨터 기반 시험. <a href="https://c3l6.com/" target="_blank" class="official-link">공식 사이트</a> </li>
+                    <li><strong>UKChO (UK Chemistry Olympiad)</strong> – Royal Society of Chemistry 주관. 영국 화학 올림피아드. <a href="https://www.rsc.org/" target="_blank" class="official-link">공식 사이트</a> </li>
+                    <li><strong>IChO (International Chemistry Olympiad)</strong> – 국제 화학 올림피아드. 60개국 이상 참가. <a href="https://www.icho.sk/" target="_blank" class="official-link">공식 사이트</a></li>
+                    <li><strong>Chemistry Olympiad (USNCO)</strong> – 미국 화학 올림피아드, 국제 학생 참가 가능. <a href="https://www.acs.org/education/students/highschool/olympiad.html" target="_blank" class="official-link">공식 사이트</a></li>
+                </ul>
+                <h3 style="color:var(--navy);">🧬 생물 (Biology)</h3>
+                <ul>
+                    <li><strong>BBO (British Biology Olympiad)</strong> – Royal Society of Biology 주관, Year 13 대상. 2시간 온라인 시험. <a href="https://www.rsb.org.uk/" target="_blank" class="official-link">공식 사이트</a> </li>
+                    <li><strong>IBO (International Biology Olympiad)</strong> – 국제 생물 올림피아드. 80개국 참가. <a href="https://www.ibo-info.org/" target="_blank" class="official-link">공식 사이트</a> </li>
+                    <li><strong>Biology Olympiad (USABO)</strong> – 미국 생물 올림피아드, 국제 학생 참가 가능. <a href="https://www.usabo.org/" target="_blank" class="official-link">공식 사이트</a></li>
+                </ul>
+                <h3 style="color:var(--navy);">💻 컴퓨터과학 (Computer Science)</h3>
+                <ul>
+                    <li><strong>IOI (International Olympiad in Informatics)</strong> – 국제 정보 올림피아드. 알고리즘 문제 해결 능력 평가. <a href="https://ioinformatics.org/" target="_blank" class="official-link">공식 사이트</a></li>
+                    <li><strong>USACO (USA Computing Olympiad)</strong> – 미국 정보 올림피아드, 국제 학생 참가 가능. 4개 레벨(Bronze, Silver, Gold, Platinum). <a href="https://usaco.org/" target="_blank" class="official-link">공식 사이트</a></li>
+                    <li><strong>Google Code Jam</strong> – 구글 주관 글로벌 코딩 대회. 3라운드 진행. <a href="https://codingcompetitions.withgoogle.com/codejam" target="_blank" class="official-link">공식 사이트</a></li>
+                </ul>
+                <h3 style="color:var(--navy);">📝 에세이/인문 (Essay / Humanities)</h3>
+                <ul>
+                    <li><strong>John Locke Global Essay Prize</strong> – 세계 최고 권위의 에세이 대회, 경제/역사/법/철학 등 분야. 2,000자 내외. <a href="https://www.johnlockeinstitute.com/" target="_blank" class="official-link">공식 사이트</a> </li>
+                    <li><strong>Young Orator of the Year</strong> – Gresham College 주관, 웅변 대회. <a href="https://www.gresham.ac.uk/" target="_blank" class="official-link">공식 사이트</a> </li>
+                    <li><strong>Concord Review</strong> – 역사 에세이 저널, 전 세계 고등학생 대상. <a href="https://www.tcr.org/" target="_blank" class="official-link">공식 사이트</a></li>
+                    <li><strong>National History Day</strong> – 미국/국제 역사 연구 대회. <a href="https://www.nhd.org/" target="_blank" class="official-link">공식 사이트</a></li>
+                </ul>
+                <h3 style="color:var(--navy);">🌍 종합/기타 (General / Other)</h3>
+                <ul>
+                    <li><strong>ISEF (Intel International Science and Engineering Fair)</strong> – 세계 최대 과학 경진대회. <a href="https://www.societyforscience.org/" target="_blank" class="official-link">공식 사이트</a> </li>
+                    <li><strong>CREST Awards (British Science Association)</strong> – 영국 과학 협회 주관 STEM 프로젝트 인증. Bronze, Silver, Gold 레벨. <a href="https://www.crestawards.org/" target="_blank" class="official-link">공식 사이트</a> </li>
+                    <li><strong>Accuracy Business Cup (ABC)</strong> – 임페리얼 칼리지 주관 국제 비즈니스 케이스 대회. <a href="https://www.imperial.ac.uk/" target="_blank" class="official-link">공식 사이트</a> </li>
+                    <li><strong>World Scholars Cup</strong> – 학제간 팀 토론 및 지식 경시 대회. <a href="https://www.scholarscup.org/" target="_blank" class="official-link">공식 사이트</a></li>
+                </ul>
+                <p style="margin-top:1rem;"><strong>💡 Tip:</strong> 대회 수상 자체도 중요하지만, 대회를 준비하며 쌓은 <span class="highlight">학문적 깊이와 자기주도적 학습 경험</span>을 Personal Statement에 녹여내는 것이 핵심입니다.</p>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 8. Personal Statement 작성 가이드 (확장) -->
+        <!-- ============================================================ -->
+        <section id="ps-guide">
+            <h2 class="section-title">✍️ Personal Statement 완전 정복 <span>2026 개정 대비</span></h2>
+            <p class="section-desc">2026년부터 변경되는 UCAS Personal Statement 형식에 완벽하게 대비할 수 있는 가이드입니다.</p>
+            <div style="background:white; border-radius:var(--border-radius); padding:2rem; box-shadow:var(--shadow); margin-bottom:2rem;">
+                <h4 style="color:var(--navy);">📌 2026년 변경 사항: 단일 에세이 → 3개 질문</h4>
+                <ul>
+                    <li><strong>질문 1:</strong> 해당 과정을 선택하게 된 동기는 무엇인가요? (Why do you want to study this course?)</li>
+                    <li><strong>질문 2:</strong> 지금까지의 학업 및 기타 경험을 통해 해당 과정을 준비하기 위해 무엇을 했나요? (How has your learning and experience prepared you for this course?)</li>
+                    <li><strong>질문 3:</strong> 해당 과정 외에 어떤 다른 경험을 통해 대학 생활에 기여할 준비가 되었나요? (What else have you done to prepare for university life?)</li>
+                </ul>
+                <p>각 질문에 600~800자 (총 4000자 내외)로 답변해야 합니다. 기존의 자유 형식보다 구조화된 답변이 요구되므로, 미리 템플릿을 만들어 연습하세요.</p>
+            </div>
+            <div class="accordion">
+                <div class="accordion-item search-item" data-search="PS 질문1 동기">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>❓ 질문 1: 지원 동기 작성법</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>목표:</strong> 해당 전공에 대한 진정한 열정과 호기심을 보여주세요.</p>
+                        <ul>
+                            <li><strong>시작:</strong> 전공에 관심을 가지게 된 결정적 계기(경험, 책, 강연, 멘토)를 구체적으로 서술하세요.</li>
+                            <li><strong>중간:</strong> 그 계기를 통해 어떤 학문적 질문이 생겼고, 어떻게 탐구해왔는지 설명하세요. 예: 특정 책을 읽고 어떤 개념에 매료되었는지, 그 후에 어떤 추가 학습을 했는지.</li>
+                            <li><strong>마무리:</strong> 이러한 관심이 왜 이 대학의 특정 과정과 잘 맞는지, 그 과정을 통해 어떤 목표를 이루고 싶은지 연결하세요.</li>
+                            <li><strong>예시:</strong> "중학교 때 읽은 '코스모스' 책을 통해 우주에 대한 깊은 호기심을 가지게 되었고, 이후 AP Physics와 Astronomy를 수강하며 블랙홀과 암흑물질에 대해 독자적으로 연구했습니다. Oxford의 Physics 과정은 이론과 관측을 결합한 커리큘럼으로, 제 관심 분야인 천체물리를 깊이 있게 탐구할 수 있는 최적의 장소라고 생각합니다."</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="accordion-item search-item" data-search="PS 질문2 준비">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>❓ 질문 2: 학업 및 경험 준비</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>목표:</strong> AP 과목, 교내 수업, 독서, EC 활동 등을 통해 어떻게 전공 지식을 쌓았는지 보여주세요.</p>
+                        <ul>
+                            <li><strong>학업:</strong> AP 과목에서 배운 내용 중 특히 흥미로웠던 주제와 그 이유를 설명하세요. 교과서 외에 읽은 책이나 논문을 언급하세요.</li>
+                            <li><strong>EC 활동:</strong> 앞서 EC 섹션에서 소개한 활동 중 전공과 직접적으로 관련된 것을 1~2개 골라, 거기서 배운 기술과 통찰을 서술하세요.</li>
+                            <li><strong>자기 주도 학습:</strong> 온라인 코스, 개인 프로젝트, 연구 경험 등을 통해 스스로 학습한 내용을 강조하세요.</li>
+                            <li><strong>예시:</strong> "AP Calculus BC에서 Taylor 급수를 배운 후, 이를 물리 문제에 적용하는 데 큰 흥미를 느껴 스스로 복잡한 진동계를 모델링하는 Python 시뮬레이션을 제작했습니다."</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="accordion-item search-item" data-search="PS 질문3 대학생활">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>❓ 질문 3: 대학 생활 기여 준비</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>목표:</strong> 전공 외에 자신의 인격, 리더십, 협업 능력, 봉사 정신 등을 보여주세요.</p>
+                        <ul>
+                            <li><strong>리더십 및 협업:</strong> 동아리 활동, 팀 프로젝트, 봉사 단체에서의 역할과 성과를 설명하세요.</li>
+                            <li><strong>취미 및 관심사:</strong> 자신을 더 잘 표현할 수 있는 독특한 취미(스포츠, 음악, 여행 등)를 소개하고, 이것이 대학 생활에서 어떤 긍정적 영향을 미칠지 언급하세요.</li>
+                            <li><strong>지역사회 기여:</strong> 봉사 활동을 통해 배운 점과 그것이 대학 커뮤니티에 어떻게 기여할 수 있는지 연결하세요.</li>
+                            <li><strong>예시:</strong> "학교 테니스 클럽 부장으로 2년간 활동하면서 신입 회원 교육 프로그램을 기획하고 운영했습니다. 이 경험을 통해 팀워크와 의사소통 능력을 키웠고, 대학에서도 동아리 활동을 통해 다양한 배경의 학생들과 교류하며 공동체에 기여하고 싶습니다."</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div style="background:#f0f7ff; padding:1.5rem; border-radius:var(--border-radius); margin-top:1rem;">
+                <h4 style="color:var(--navy);">⚠️ PS 작성 시 피해야 할 실수</h4>
+                <ul>
+                    <li><strong>진부한 표현:</strong> "I have always wanted to study..." 대신 구체적인 계기와 경험을 서술하세요.</li>
+                    <li><strong>나열식:</strong> 활동을 단순히 나열하지 말고, 각 활동에서 배운 점과 자신의 성장을 설명하세요.</li>
+                    <li><strong>과장:</strong> 실제로 경험하지 않은 내용을 작성하지 마세요. 인터뷰에서 질문이 올 수 있습니다.</li>
+                    <li><strong>전공과 무관한 내용:</strong> 질문 3을 제외하고는 전공과 관련된 내용에 집중하세요.</li>
+                    <li><strong>철자 및 문법 오류:</strong> 여러 번 검토하고, 교사나 멘토의 피드백을 받으세요.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 9. 영국 유학 & 비자 가이드 (5000바이트 이상 확장) -->
+        <!-- ============================================================ -->
+        <section id="uk-life">
+            <h2 class="section-title">🇬🇧 영국 유학 & 비자 완전 정복 <span>2026 최신</span></h2>
+            <p class="section-desc">영국 유학 준비부터 학생 비자 신청, 현지 정착까지 유학원에서 알려주는 실전 팁과 정보를 한 곳에 정리했습니다.</p>
+
+            <div style="background:white; border-radius:var(--border-radius); padding:2rem; box-shadow:var(--shadow); margin-bottom:2rem;">
+                <h3 style="color:var(--navy);">📌 1. 영국 학생 비자 (Student Visa) – 2026 기준</h3>
+                <ul>
+                    <li><strong>신청 시점:</strong> 수업 시작일로부터 <span class="highlight">6개월 전</span>부터 신청 가능합니다.</li>
+                    <li><strong>CAS (Confirmation of Acceptance for Studies):</strong> 비자 신청의 필수 조건입니다. 학교에서 Unconditional Offer를 받은 후 CAS를 발급받습니다.</li>
+                    <li><strong>재정 증명 (Financial Requirements):</strong> 1년 학비 + 9개월 생활비를 증명해야 합니다. 2026년 기준 생활비는 <strong>런던 £1,529/월</strong>, <strong>런던 외 £1,171/월</strong>입니다. 재정 증명은 <strong>28일 연속</strong> 보유 후, <strong>신청일로부터 31일 이내</strong>에 발급된 서류로 제출해야 합니다.</li>
+                    <li><strong>영어 능력:</strong> UKVI 승인 SELT 시험 점수가 필요합니다. IELTS for UKVI (Academic) 또는 Trinity College London 등이 인정됩니다.</li>
+                    <li><strong>비용:</strong> 비자 신청비 (£490~£550) + IHS (Immigration Health Surcharge)를 납부해야 합니다. IHS는 1년당 약 £776입니다.</li>
+                    <li><strong>신청 절차:</strong> 온라인 신청서 작성 → 서류 업로드 → 비자 신청 센터 방문 (생체 정보 등록).</li>
+                    <li><strong>처리 기간:</strong> 일반적으로 3~8주 소요되며, 우선 처리 서비스(Priority/ Super Priority)를 이용하면 5일~24시간 내 처리 가능합니다.</li>
+                </ul>
+                <p><a href="https://www.gov.uk/student-visa" target="_blank" class="official-link">🔗 영국 정부 공식 Student Visa 페이지</a></p>
+            </div>
+
+            <div style="background:white; border-radius:var(--border-radius); padding:2rem; box-shadow:var(--shadow); margin-bottom:2rem;">
+                <h3 style="color:var(--navy);">📌 2. 출국 전 준비 체크리스트</h3>
+                <ul>
+                    <li><strong>필수 서류:</strong> 여권(유효기간 확인), CAS, 비자 승인서, 합격 통지서, 여권용 사진, 유학생 보험 증서.</li>
+                    <li><strong>금융:</strong> 현지 정착 자금(현금 + 카드), 영국 은행 계좌 개설 준비. 한국 카드 해외 사용 가능 여부 확인.</li>
+                    <li><strong>통신:</strong> 한국 번호 유지(로밍) 및 영국 유심 준비. 가성비 좋은 Giffgaff, Three, EE 등 추천.</li>
+                    <li><strong>의료:</strong> 영국 출국 전 건강 검진 및 필요한 예방 접종 확인. NHS 등록 후 GP 방문.</li>
+                    <li><strong>전자제품:</strong> 노트북, 핸드폰, 변환 플러그(영국은 3핀), 멀티탭, 보조배터리.</li>
+                    <li><strong>생활용품:</strong> 한국 음식(햇반, 김치 등), 슬리퍼, 개인 의약품(감기약, 진통제), 침구류(현지 구매 가능).</li>
+                    <li><strong>숙소:</strong> 대학 기숙사 또는 민간 임대 숙소를 출국 전에 확정하세요.</li>
+                </ul>
+            </div>
+
+            <div style="background:white; border-radius:var(--border-radius); padding:2rem; box-shadow:var(--shadow); margin-bottom:2rem;">
+                <h3 style="color:var(--navy);">📌 3. 영국 도착 후 해야 할 일 (정착 팁)</h3>
+                <ul>
+                    <li><strong>BRP (생체정보카드) 수령:</strong> 도착 후 10일 이내에 지정 우체국에서 수령해야 합니다 (2025년부터 e-Visa로 전환 중).</li>
+                    <li><strong>은행 계좌 개설:</strong> HSBC, Barclays, Lloyds, NatWest 등 주요 은행에서 학생 계좌를 개설하세요. 대학의 추천 은행을 이용하면 수수료가 면제됩니다.</li>
+                    <li><strong>NHS 등록:</strong> GP(일반의)에 등록하여 의료 서비스를 이용할 수 있습니다. NHS 번호를 받으면 병원 진료가 무료입니다.</li>
+                    <li><strong>대중교통:</strong> Oyster Card(런던) 또는 Student Railcard를 발급받아 교통비를 절약하세요. 학생 할인은 1/3 할인까지 가능합니다.</li>
+                    <li><strong>주소 등록:</strong> 대학에 현지 주소를 등록하고, Council Tax 면제 신청을 하세요 (전일제 학생은 면제).</li>
+                    <li><strong>식습관:</strong> 영국은 한국과 식재료가 다르므로, 한인마트(런던, 맨체스터)를 이용하거나 한국 식품을 택배로 주문하세요.</li>
+                </ul>
+            </div>
+
+            <div style="background:white; border-radius:var(--border-radius); padding:2rem; box-shadow:var(--shadow); margin-bottom:2rem;">
+                <h3 style="color:var(--navy);">📌 4. 유학생 생활 꿀팁</h3>
+                <ul>
+                    <li><strong>물가:</strong> 영국 물가는 한국보다 전반적으로 높습니다. 장보기는 Aldi, Lidl 등 저가 슈퍼마켓을 이용하세요.</li>
+                    <li><strong>학생 할인:</strong> UNiDAYS, Student Beans 앱으로 다양한 학생 할인을 받을 수 있습니다. 아마존, 어도비, 애플도 학생 할인 제공.</li>
+                    <li><strong>네트워킹:</strong> 대학 동아리, 학회, 커리어 페어에 적극 참여하여 인맥을 쌓으세요. LinkedIn 프로필을 활성화하세요.</li>
+                    <li><strong>멘탈 관리:</strong> 영국 날씨와 문화 차이로 인한 문화 충격을 대비하세요. 대학의 상담 서비스를 적극 활용하세요.</li>
+                    <li><strong>아르바이트:</strong> 학생 비자로 주당 20시간 이내 아르바이트가 가능합니다 (방학 중 풀타임 가능).</li>
+                    <li><strong>여행:</strong> 영국 내 기차 여행은 Young Person Railcard로 할인 받으세요. 유럽 여행은 Ryanair, easyJet 저가 항공 이용.</li>
+                </ul>
+            </div>
+
+            <div style="background:#f0f7ff; padding:1.5rem; border-radius:var(--border-radius); margin-top:1rem;">
+                <h4 style="color:var(--navy);">⚠️ 주의사항</h4>
+                <ul>
+                    <li><strong>비자 조건:</strong> 학생 비자로 주당 20시간 이내 아르바이트가 가능합니다 (방학 중 풀타임 가능).</li>
+                    <li><strong>재정 증명:</strong> 비자 신청 시 재정 증명은 <strong>본인 명의</strong> 계좌로 준비하는 것이 가장 간편합니다.</li>
+                    <li><strong>CAS 발급:</strong> CAS는 유효기간이 6개월이므로, 받은 후 빠르게 비자 신청을 진행하세요.</li>
+                    <li><strong>NHS 수리지:</strong> IHS 납부 후 NHS 이용 가능합니다. 치과나 안과는 별도 비용이 들 수 있습니다.</li>
+                    <li><strong>보험:</strong> 여행자 보험 또는 유학생 전용 보험에 가입하세요. 질병, 사고, 분실물에 대비하세요.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 10. 영국 대학 입시 용어 사전 (Glossary) -->
+        <!-- ============================================================ -->
+        <section id="glossary">
+            <h2 class="section-title">📖 영국 대학 입시 용어 사전 <span>Glossary</span></h2>
+            <p class="section-desc">UCAS, Personal Statement, CAS 등 영국 대학 입시에서 자주 등장하는 용어들을 정리했습니다.</p>
+            <div class="glossary-grid">
+                <div class="glossary-item"><h4>UCAS</h4><p>Universities and Colleges Admissions Service. 영국 대학 입시를 총괄하는 공식 기관입니다.</p></div>
+                <div class="glossary-item"><h4>CAS</h4><p>Confirmation of Acceptance for Studies. 학생 비자 신청에 필요한 고유 번호입니다.</p></div>
+                <div class="glossary-item"><h4>Personal Statement</h4><p>자기소개서. 지원 동기와 경험을 서술하는 4000자 내외의 에세이입니다.</p></div>
+                <div class="glossary-item"><h4>Conditional Offer</h4><p>조건부 합격. AP 점수, IELTS 등 특정 조건을 충족해야 최종 합격됩니다.</p></div>
+                <div class="glossary-item"><h4>Unconditional Offer</h4><p>무조건 합격. 모든 조건이 이미 충족된 상태에서 받는 합격 통지입니다.</p></div>
+                <div class="glossary-item"><h4>Firm Choice</h4><p>UCAS에서 최우선으로 선택하는 대학 (첫 번째 선택).</p></div>
+                <div class="glossary-item"><h4>Insurance Choice</h4><p>Firm Choice에 실패할 경우 대비하여 선택하는 두 번째 대학.</p></div>
+                <div class="glossary-item"><h4>UCAS Extra</h4><p>5개 지원에 실패했을 때 추가로 지원할 수 있는 과정 (2월~7월).</p></div>
+                <div class="glossary-item"><h4>Clearing</h4><p>정시 마감 후 남은 자리에 지원하는 과정 (7월~10월).</p></div>
+                <div class="glossary-item"><h4>Tariff Points</h4><p>AP, A-Level 등 자격증을 점수로 환산한 UCAS 시스템입니다.</p></div>
+                <div class="glossary-item"><h4>IHS</h4><p>Immigration Health Surcharge. 비자 신청 시 납부하는 영국 의료 보험료입니다.</p></div>
+                <div class="glossary-item"><h4>BRP</h4><p>Biometric Residence Permit. 영국 체류 자격 증명 카드입니다.</p></div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 11. 전공별 추천 도서 목록 (Book List) -->
+        <!-- ============================================================ -->
+        <section id="books">
+            <h2 class="section-title">📚 전공별 추천 도서 <span>Book List</span></h2>
+            <p class="section-desc">각 전공별로 Personal Statement 작성과 면접 준비에 도움이 되는 추천 도서입니다.</p>
+            <div class="book-grid">
+                <div class="book-card"><h4>Computer Science</h4><div class="author">- SICP (Structure and Interpretation of Computer Programs)</div><p>컴퓨터과학의 고전, 알고리즘과 프로그래밍 언어의 기초를 배울 수 있습니다.</p></div>
+                <div class="book-card"><h4>Mechanical Engineering</h4><div class="author">- Engineering Mechanics: Dynamics</div><p>역학의 기본 원리와 응용을 다루는 필독서입니다.</p></div>
+                <div class="book-card"><h4>Physics</h4><div class="author">- The Feynman Lectures on Physics</div><p>물리학의 모든 것을 통찰력 있게 설명하는 명저입니다.</p></div>
+                <div class="book-card"><h4>Economics</h4><div class="author">- Freakonomics</div><p>일상 속 경제학 원리를 재미있게 풀어낸 베스트셀러입니다.</p></div>
+                <div class="book-card"><h4>Law</h4><div class="author">- Letters to a Law Student</div><p>법학 입문과 학업 전략을 안내하는 실용 가이드입니다.</p></div>
+                <div class="book-card"><h4>History</h4><div class="author">- A History of the World in 100 Objects</div><p>세계사를 유물로 조망하는 독특한 접근의 책입니다.</p></div>
+                <div class="book-card"><h4>Medicine</h4><div class="author">- Being Mortal</div><p>의사의 관점에서 생로병사를 다룬 감동적인 에세이입니다.</p></div>
+                <div class="book-card"><h4>Psychology</h4><div class="author">- Thinking, Fast and Slow</div><p>인간의 사고 과정과 편향을 탐구하는 심리학 필독서입니다.</p></div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 12. 영국 대학 랭킹 테이블 (Ranking) -->
+        <!-- ============================================================ -->
+        <section id="ranking">
+            <h2 class="section-title">🏆 영국 대학 랭킹 <span>2025 QS 기준</span></h2>
+            <p class="section-desc">영국 대학들의 QS World University Rankings 2025 기준 전공별 랭킹입니다.</p>
+            <div class="ranking-table-wrap">
+                <table>
+                    <thead>
+                        <tr><th>대학</th><th>종합 랭킹</th><th>공학</th><th>자연과학</th><th>인문학</th><th>사회과학</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Cambridge</td><td>2</td><td>1</td><td>1</td><td>3</td><td>4</td></tr>
+                        <tr><td>Oxford</td><td>3</td><td>3</td><td>2</td><td>1</td><td>2</td></tr>
+                        <tr><td>Imperial</td><td>4</td><td>2</td><td>4</td><td>15</td><td>12</td></tr>
+                        <tr><td>UCL</td><td>8</td><td>7</td><td>8</td><td>5</td><td>3</td></tr>
+                        <tr><td>LSE</td><td>40</td><td>-</td><td>-</td><td>8</td><td>1</td></tr>
+                        <tr><td>Manchester</td><td>32</td><td>6</td><td>9</td><td>14</td><td>10</td></tr>
+                        <tr><td>Warwick</td><td>61</td><td>15</td><td>12</td><td>20</td><td>5</td></tr>
+                        <tr><td>Edinburgh</td><td>22</td><td>10</td><td>6</td><td>4</td><td>8</td></tr>
+                        <tr><td>Durham</td><td>82</td><td>-</td><td>-</td><td>9</td><td>15</td></tr>
+                        <tr><td>Bristol</td><td>55</td><td>9</td><td>14</td><td>12</td><td>18</td></tr>
+                    </tbody>
+                </table>
+                <p style="padding:1rem;"><small>※ QS World University Rankings 2025 기준. 일부 전공은 랭킹 미제공(-)</small></p>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 13. 비자 신청 체크리스트 (상세) -->
+        <!-- ============================================================ -->
+        <section id="visa-checklist">
+            <h2 class="section-title">📋 학생 비자 신청 체크리스트 <span>상세</span></h2>
+            <p class="section-desc">영국 학생 비자(Student Visa) 신청을 위한 단계별 필수 준비 사항입니다.</p>
+            <div class="checklist-grid">
+                <div class="checklist-card">
+                    <h4>📄 서류 준비</h4>
+                    <ul>
+                        <li>✔ 여권 (유효기간 6개월 이상)</li>
+                        <li>✔ CAS 번호 (학교에서 발급)</li>
+                        <li>✔ 재정 증명 (28일 연속 잔고 증명)</li>
+                        <li>✔ UKVI IELTS / TOEFL 성적</li>
+                        <li>✔ 여권용 사진 (온라인 업로드)</li>
+                        <li>✔ 학력 증명서 (졸업/재학 증명)</li>
+                    </ul>
+                </div>
+                <div class="checklist-card">
+                    <h4>💰 비용 및 납부</h4>
+                    <ul>
+                        <li>✔ 비자 신청비 (£490~£550)</li>
+                        <li>✔ IHS (£776/년)</li>
+                        <li>✔ 의료 검진비 (TB 검사 등)</li>
+                        <li>✔ 우선 처리 서비스 (선택)</li>
+                    </ul>
+                </div>
+                <div class="checklist-card">
+                    <h4>📅 신청 일정</h4>
+                    <ul>
+                        <li>✔ 수업 시작 6개월 전 신청 가능</li>
+                        <li>✔ CAS 수령 후 바로 신청</li>
+                        <li>✔ 신청 센터 방문 예약</li>
+                        <li>✔ 생체 정보 등록 (지문, 사진)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 14. EXTENDED FAQ (25+ 질문) -->
+        <!-- ============================================================ -->
+        <section id="faq">
+            <h2 class="section-title">❓ 자주 묻는 질문 <span>Click to Reveal</span></h2>
+            <div class="faq-grid">
+                <div class="faq-item search-item" data-search="AP 2과목 가능 지원">
+                    <div class="q" onclick="toggleFaq(this)">AP를 2과목만 들었는데 영국 대학 지원이 가능한가요? <span>+</span></div>
+                    <div class="a">상위권 대학(옥스브리지, LSE, 임페리얼)은 3~5과목을 요구합니다. 다만, 2과목 5점 + SAT 1500점 이상 + 우수한 내신으로 일부 대학(랭킹 20위권 외)에서 검토될 수 있습니다. 인문학은 3과목을 최소 목표로 하세요. Dyson School은 4과목 5점을 권장합니다. AP 과목 수가 부족하면 파운데이션 과정을 고려해야 할 수 있습니다. 가능하다면 11학년에 3과목, 12학년에 추가 1~2과목을 응시하는 것이 좋습니다.</div>
+                </div>
+                <div class="faq-item search-item" data-search="SAT 필수 영국 대학">
+                    <div class="q" onclick="toggleFaq(this)">영국 대학에 SAT/ACT가 꼭 필요한가요? <span>+</span></div>
+                    <div class="a">옥스브리지, LSE, 임페리얼, UCL, KCL 등 상위권은 SAT/ACT를 <strong>강력히 권장</strong>하거나 필수로 간주합니다. 특히 AP만으로 학업 능력을 입증하기 부족할 수 있으므로, SAT 1450+/ACT 32+를 목표로 병행 준비하는 것이 안전합니다. 인문계열도 동일합니다. Dyson School은 SAT 1480+를 추천합니다. SAT 없이도 지원할 수 있는 대학도 있지만, 경쟁력이 떨어질 수 있습니다. SAT는 11학년 겨울에 첫 시험을 보고, 12학년 가을에 마지막으로 보는 것을 추천합니다.</div>
+                </div>
+                <div class="faq-item search-item" data-search="ESAT TMUA 차이">
+                    <div class="q" onclick="toggleFaq(this)">ESAT과 TMUA의 차이점은 무엇인가요? <span>+</span></div>
+                    <div class="a"><strong>ESAT:</strong> 공학/자연과학 지원자 대상. 3개 모듈(수학1 필수 + 2개 선택), 각 40분, 총 120분. 케임브리지, 임페리얼, UCL(EEE)에서 사용.<br><strong>TMUA:</strong> 수학/CS/경제 지원자 대상. 2개 파트(각 75분), 총 150분. 케임브리지, 임페리얼, LSE, 워윅 등에서 사용. 두 시험 모두 컴퓨터 기반, 계산기 사용 불가, 감점 없음.</div>
+                </div>
+                <div class="faq-item search-item" data-search="Personal Statement 작성법 인문 STEM">
+                    <div class="q" onclick="toggleFaq(this)">전공별 Personal Statement는 어떻게 다르게 작성하나요? <span>+</span></div>
+                    <div class="a"><strong>STEM:</strong> 80% 학문적 열정(독서, 프로젝트, 연구), 20% 비교과. 구체적인 기술(코딩, 실험)과 문제 해결 과정을 강조. <br><strong>인문/사회:</strong> 70% 학문적 탐구(에세이, 토론, 읽은 책), 30% 비교과. 자신의 사고 변화와 비판적 분석을 서술. <br><strong>예술:</strong> 포트폴리오와 연계한 창작 과정과 영감을 서술. <br><strong>Dyson School:</strong> 디자인과 공학의 융합 경험, 실패와 개선 과정을 구체적으로 기술해야 합니다. 모든 전공에서 "왜 이 전공인지"에 대한 개인적인 이야기가 핵심입니다. 2026년부터는 3개 질문(동기, 준비, 경험)에 답하는 형식으로 변경되므로, 각 질문에 맞게 구조화하세요.</div>
+                </div>
+                <div class="faq-item search-item" data-search="파운데이션 AP 없이">
+                    <div class="q" onclick="toggleFaq(this)">AP가 없으면 무조건 파운데이션을 가야 하나요? <span>+</span></div>
+                    <div class="a">네, AP 성적이 없거나 2과목 이하인 경우, 영국 대학의 파운데이션(Foundation) 과정을 거치는 것이 일반적입니다. AP를 준비한다면 파운데이션을 건너뛰고 1학년에 바로 입학할 수 있어 시간과 비용을 절약할 수 있습니다. 단, 예술/디자인은 포트폴리오가 더 중요할 수 있어 조건이 완화되기도 합니다. 파운데이션은 1년 과정이며, 성적에 따라 진학 대학이 결정됩니다. 파운데이션을 선택할 때는 원하는 대학과의 진학 계약이 있는지 확인하세요.</div>
+                </div>
+                <div class="faq-item search-item" data-search="인문학 AP 추천 과목">
+                    <div class="q" onclick="toggleFaq(this)">인문학/사회과학 지원 시 추천 AP 과목은? <span>+</span></div>
+                    <div class="a"><strong>영문학/역사/철학:</strong> AP English Literature, AP United States History, AP World History, AP Psychology. <br><strong>경제학/정치학:</strong> AP Macroeconomics, AP Microeconomics, AP Statistics, AP US Government. <br><strong>법학:</strong> AP English Language, AP History, AP Psychology. 모두 5점을 목표로 하고, SAT Reading/Writing 점수가 매우 중요합니다. AP 과목은 전공 관련성을 최우선으로 선택하세요. 또한 AP Art History, AP European History 등도 인문학에 도움이 됩니다.</div>
+                </div>
+                <div class="faq-item search-item" data-search="인터뷰 준비 팁">
+                    <div class="q" onclick="toggleFaq(this)">옥스브리지 및 Dyson School 인터뷰는 어떻게 준비하나요? <span>+</span></div>
+                    <div class="a">전공 지식 심화(AP 이상 수준)와 시사 이슈에 대한 논리적 사고를 평가합니다. STEM은 문제 풀이 과정을 말로 설명하는 연습을, 인문/사회는 자신의 에세이와 독서 목록을 바탕으로 심층 토론을 준비하세요. Dyson School은 디자인 사고 과정과 실제 프로토타입에 대한 질문이 많으므로, 포트폴리오 작품을 영어로 상세히 설명할 수 있어야 합니다. 모의 인터뷰를 최소 3회 이상 진행하고, 자신의 답변을 녹음하여 개선하세요. 또한 최근 전공 분야의 연구 동향을 파악하고, 자신의 의견을 정리해 두는 것이 좋습니다.</div>
+                </div>
+                <div class="faq-item search-item" data-search="예술 디자인 포트폴리오 AP">
+                    <div class="q" onclick="toggleFaq(this)">예술/디자인 전공은 AP 외에 무엇이 중요한가요? <span>+</span></div>
+                    <div class="a"><strong>포트폴리오</strong>가 가장 중요합니다. 15~20개의 작품을 통해 아이디어 전개 과정, 기술 숙련도, 독창성을 보여줘야 합니다. AP Studio Art (Drawing, 2D, 3D)는 큰 도움이 되며, AP Art History는 이론적 배경을 강화합니다. UCL Bartlett, CSM, Dyson School 등은 포트폴리오 인터뷰를 진행하기도 합니다. 포트폴리오는 온라인(Behance, 개인 웹사이트)으로도 준비하세요. 또한 작품마다 설명(Concept, 과정, 재료, 크기)을 영어로 작성하여 제출하는 것이 좋습니다.</div>
+                </div>
+                <div class="faq-item search-item" data-search="2026 UCAS 변경 사항">
+                    <div class="q" onclick="toggleFaq(this)">2026년 UCAS 자기소개서(PS) 변경 사항이 있나요? <span>+</span></div>
+                    <div class="a">2026년부터 UCAS Personal Statement는 자유 형식의 단일 에세이에서 <strong>3개의 구체적인 질문</strong>에 답하는 형식으로 변경됩니다. 질문은 1) 지원 동기, 2) 준비 과정(학업 및 비교과), 3) 관련 경험으로 구성됩니다. 이에 맞춰 각 질문에 600~800자(총 4000자 내외)로 명확하고 간결하게 답변하는 연습이 필요합니다. 기존과 달리 구조화된 답변이 요구되므로, 미리 템플릿을 만들어 연습하세요. UCAS 공식 웹사이트에서 세부 가이드를 확인하세요.</div>
+                </div>
+                <div class="faq-item search-item" data-search="추천서 준비">
+                    <div class="q" onclick="toggleFaq(this)">추천서(Reference)는 어떻게 준비해야 하나요? <span>+</span></div>
+                    <div class="a">영국 대학은 교사 추천서를 매우 중요하게 생각합니다. 11학년 말에 추천서를 써줄 교사 2명(보통 전공 관련 과목과 영어/수학)에게 미리 요청하세요. 교사에게 자신의 CV, 활동 목록, Personal Statement 초안을 제공하여 구체적인 내용을 작성할 수 있도록 도와주세요. 추천서는 학업 능력, 개인적 자질, 전공에 대한 열정 등을 포함해야 합니다. 교사에게 충분한 시간(최소 1개월)을 주고, 마감 일정을 알려주세요.</div>
+                </div>
+                <div class="faq-item search-item" data-search="비자 준비">
+                    <div class="q" onclick="toggleFaq(this)">학생 비자(Tier 4)는 어떻게 준비하나요? <span>+</span></div>
+                    <div class="a">합격 후 대학에서 CAS(Confirmation of Acceptance for Studies) 번호를 받으면, 영국 비자 신청 사이트에서 온라인으로 신청합니다. 필요 서류: CAS, 여권, 재정 증명(은행 잔고 증명서, 1년 학비+생활비), 영어 성적(IELTS/TOEFL), TB 검진 결과. 비자 신청은 보통 3~8주 소요되므로, 7월 초에 준비를 시작하는 것이 좋습니다. 정확한 금액은 매년 변동하므로, UKVI 사이트를 확인하세요.</div>
+                </div>
+                <div class="faq-item search-item" data-search="장학금">
+                    <div class="q" onclick="toggleFaq(this)">영국 대학 장학금은 어떻게 받을 수 있나요? <span>+</span></div>
+                    <div class="a">영국 대학은 국제 학생에게 다양한 장학금을 제공합니다. 대표적으로 <strong>Chevening Scholarship</strong> (영국 정부), <strong>Great Scholarships</strong>, 각 대학 자체 장학금이 있습니다. 장학금은 보통 12월~2월 사이에 신청하므로, 지원 전에 미리 알아보세요. 많은 장학금이 학업 우수성, 리더십, 봉사 활동을 기준으로 선발합니다. 각 대학의 재정 지원 페이지를 정기적으로 확인하세요.</div>
+                </div>
+                <div class="faq-item search-item" data-search="ESAT 기출문제 다운로드">
+                    <div class="q" onclick="toggleFaq(this)">ESAT 기출문제는 어디서 다운로드 받을 수 있나요? <span>+</span></div>
+                    <div class="a">ESAT 공식 사이트(<a href="https://esat-tmua.ac.uk/prepare/" target="_blank">esat-tmua.ac.uk</a>)에서 샘플 테스트와 시험 규격을 확인할 수 있습니다. 또한 ESAT은 ENGAA와 NSAA의 문제 유형을 계승하므로, <a href="https://esat.org.cn/resources" target="_blank">esat.org.cn/resources</a>에서 2016-2023년 ENGAA/NSAA 기출문제를 무료로 다운로드할 수 있습니다.</div>
+                </div>
+                <div class="faq-item search-item" data-search="TMUA 기출문제 다운로드">
+                    <div class="q" onclick="toggleFaq(this)">TMUA 기출문제는 어디서 다운로드 받을 수 있나요? <span>+</span></div>
+                    <div class="a">TMUA 공식 사이트(<a href="https://esat-tmua.ac.uk/prepare/" target="_blank">esat-tmua.ac.uk</a>)에서 시험 규격과 샘플을 확인할 수 있습니다. <a href="https://tmua.academy/resources" target="_blank">tmua.academy/resources</a>에서 2017-2024년 기출문제, 채점 기준, 공식 스터디 자료(Notes on Logic and Proof, Notes on Mathematics)를 다운로드할 수 있습니다.</div>
+                </div>
+                <div class="faq-item search-item" data-search="비자 재정 증명">
+                    <div class="q" onclick="toggleFaq(this)">학생 비자 재정 증명은 얼마나 준비해야 하나요? <span>+</span></div>
+                    <div class="a">2026년 기준 런던은 £1,529/월, 런던 외는 £1,171/월의 9개월치 + 1년 학비를 증명해야 합니다. 예: 런던 대학 1년 학비 £30,000 + £1,529×9 = £43,761 이상. 재정 증명은 28일 연속 보유 후, 신청일로부터 31일 이내에 발급된 서류로 제출해야 합니다.</div>
+                </div>
+                <div class="faq-item search-item" data-search="영국 유학 준비물">
+                    <div class="q" onclick="toggleFaq(this)">영국 유학 출국 전 꼭 챙겨야 할 준비물은? <span>+</span></div>
+                    <div class="a">여권, CAS, 비자, 여권용 사진, 노트북, 변환 플러그, 한국 음식, 개인 의약품, 보험 증서, 침구류, 슬리퍼, 멀티탭, 보조배터리, 한국 카드(해외 사용 가능), 여행용 어댑터, 필기구, 영어 사전, 한국 책, 스포츠 용품 등이 필요합니다.</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ===== MODALS ===== -->
+    <div class="modal-overlay" id="majorModal">
+        <div class="modal-box"><button class="modal-close" onclick="closeModal('majorModal')">✕</button><div id="modalContent"></div></div>
+    </div>
+    <div class="modal-overlay" id="subjectModal">
+        <div class="modal-box"><button class="modal-close" onclick="closeModal('subjectModal')">✕</button><div id="subjectModalContent"></div></div>
+    </div>
+    <div class="modal-overlay" id="uniDeptModal">
+        <div class="modal-box"><button class="modal-close" onclick="closeModal('uniDeptModal')">✕</button><div id="uniDeptModalContent"></div></div>
+    </div>
+
+    <footer><p>© 2026 <strong>UK Uni 포털</strong> · 한국 학생들을 위한 영국 대학 입시 종합 가이드 <br>본 사이트는 정보 제공 목적이며, 실제 입시 정책은 각 대학 공식 웹사이트를 확인하세요.</p></footer>
+
+    <script>
+        // ========================================
+        // HOME 버튼 (로고 클릭)
+        // ========================================
+        function goHome() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            // 홈 섹션으로 이동
+            document.getElementById('home').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // ========================================
+        // SEARCH - 고급 검색
+        // ========================================
+        function performSearch() {
+            const main = document.getElementById('mainSearchInput');
+            const header = document.getElementById('headerSearchInput');
+            const query = (main.value || header.value || '').toLowerCase().trim();
+            if (main.value !== query) main.value = query;
+            if (header.value !== query) header.value = query;
+
+            const items = document.querySelectorAll('.search-item');
+            let found = false;
+            items.forEach(item => {
+                const text = (item.textContent || '').toLowerCase();
+                const data = (item.dataset.search || '').toLowerCase();
+                const match = text.includes(query) || data.includes(query) || query === '';
+                if (match && query !== '') { item.classList.remove('hidden');
+                    found = true; } else if (query === '') { item.classList.remove('hidden');
+                    found = true; } else { item.classList.add('hidden'); }
+            });
+            document.getElementById('noResults').style.display = (query !== '' && document.querySelectorAll('.search-item:not(.hidden)').length === 0) ? 'block' : 'none';
+
+            const panel = document.getElementById('searchResultsPanel');
+            const content = document.getElementById('searchResultsContent');
+            const queryDisplay = document.getElementById('searchQueryDisplay');
+
+            if (query === '') {
+                panel.style.display = 'none';
+                return;
+            }
+
+            const searchDB = {
+                '컴퓨터공학': { unis: ['Cambridge', 'Oxford', 'Imperial', 'UCL', 'Edinburgh'], tip: 'AP Calc BC, CS A, Stats 5점 필수. 개인 프로젝트(GitHub)와 해커톤 참여 경험이 큰 도움.', route: '10학년: 기초 수학/코딩 → 11학년: AP CS A, Calc BC, Stats → 12학년: ESAT/MAT 준비' },
+                '기계공학': { unis: ['Cambridge', 'Imperial', 'Manchester', 'Bristol', 'Sheffield'], tip: 'AP Physics C (Mech+E&M), Calc BC 5점 필수. 로봇 대회 경험과 3D 모델링 능력 강조.', route: '10학년: 물리/수학 내신 관리 → 11학년: AP Physics C, Calc BC → 12학년: ESAT' },
+                '경제학': { unis: ['LSE', 'Oxford', 'Warwick', 'UCL', 'Cambridge'], tip: 'AP Macro/Micro, Stats, Calc BC 5점 필수. 데이터 분석 프로젝트와 금융 교육 봉사 추천.', route: '10학년: 경제 기초 독서 → 11학년: AP Macro/Micro, Stats → 12학년: TSA 준비' },
+                '법학': { unis: ['Oxford', 'LSE', 'KCL', 'UCL', 'Durham'], tip: 'AP English, History 5점 필수. LNAT 준비와 모의 재판 경험 필수.', route: '10학년: 논리/에세이 훈련 → 11학년: AP English, History → 12학년: LNAT 집중 준비' },
+                '디자인': { unis: ['Imperial Dyson', 'UCL Bartlett', 'CSM', 'RCA'], tip: '포트폴리오가 80% 이상 차지. AP Studio Art, Art History 추천.', route: '10학년: 드로잉/디자인 기초 → 11학년: 포트폴리오 작업 시작 → 12학년: 포트폴리오 완성 및 ESAT' },
+                '의학': { unis: ['Oxford', 'Cambridge', 'UCL', 'Imperial', 'KCL'], tip: 'AP Biology, Chemistry, Math 5점 필수. 병원 봉사 및 생명과학 연구 경험 필수.', route: '10학년: 생물/화학 내신 관리 → 11학년: AP Bio, Chem, Calc → 12학년: UCAT/BMAT 준비' },
+                'ESAT': { unis: ['Cambridge', 'Imperial', 'UCL'], tip: '공학/자연과학 지원자 필수. Math 1 + 2개 모듈 선택. ENGAA/NSAA 기출문제로 연습.', route: '8월: 기출문제 풀이 시작 → 9월: 등록 마감(9/28) → 10월: 시험(10/12-16)' },
+                'TMUA': { unis: ['Cambridge', 'Imperial', 'LSE', 'Warwick'], tip: '수학/CS/경제 지원자 필수. 2시간 30분, 2개 파트. 논리와 증명 영역 포함.', route: '8월: 시험 규격 확인 → 9월: 등록 마감(9/28) → 10월: 시험(10/12-16)' }
+            };
+
+            let matched = false;
+            let html = '';
+            for (const [key, val] of Object.entries(searchDB)) {
+                if (query.includes(key) || key.includes(query)) {
+                    matched = true;
+                    html += `<div class="result-item">
+                                <strong>🎯 ${key}</strong>
+                                <span class="tag">관련 대학</span> ${val.unis.join(', ')}<br>
+                                <span class="tag">💡 입시 팁</span> ${val.tip}<br>
+                                <span class="tag">📅 추천 루트</span> ${val.route}
+                             </div>`;
+                }
+            }
+
+            if (!matched) {
+                const keywords = query.split(' ');
+                let foundAny = false;
+                for (const [key, val] of Object.entries(searchDB)) {
+                    if (keywords.some(k => key.includes(k) || k.includes(key))) {
+                        foundAny = true;
+                        html += `<div class="result-item">
+                                    <strong>🔍 추천: ${key}</strong>
+                                    <span class="tag">관련 대학</span> ${val.unis.join(', ')}<br>
+                                    <span class="tag">💡 입시 팁</span> ${val.tip}<br>
+                                    <span class="tag">📅 추천 루트</span> ${val.route}
+                                 </div>`;
+                    }
+                }
+                if (!foundAny) {
+                    html = `<div class="result-item">검색어와 일치하는 전공 정보가 없습니다. 다른 키워드(예: '컴퓨터공학', '경제학', 'ESAT')로 시도해보세요.</div>`;
+                }
+            }
+
+            content.innerHTML = html;
+            queryDisplay.textContent = query;
+            panel.style.display = 'block';
+        }
+
+        document.getElementById('mainSearchInput').addEventListener('input', performSearch);
+        document.getElementById('headerSearchInput').addEventListener('input', function() {
+            document.getElementById('mainSearchInput').value = this.value;
+            performSearch();
+        });
+        document.getElementById('mainSearchInput').addEventListener('keypress', e => { if (e.key === 'Enter') performSearch(); });
+        document.getElementById('headerSearchInput').addEventListener('keypress', e => { if (e.key === 'Enter') performSearch(); });
+
+        // ========================================
+        // ACCORDION
+        // ========================================
+        function toggleAccordion(el) {
+            const item = el.closest('.accordion-item');
+            if (!item) return;
+            const parent = item.closest('.accordion');
+            if (parent) parent.querySelectorAll('.accordion-item').forEach(c => c.classList.remove('active'));
+            if (!item.classList.contains('active')) item.classList.add('active');
+        }
+
+        // ========================================
+        // TABS
+        // ========================================
+        function switchTab(event, tabId) {
+            const container = event.target.closest('.tabs-container');
+            container.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            event.target.classList.add('active');
+            container.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        // ========================================
+        // FAQ
+        // ========================================
+        function toggleFaq(el) {
+            const item = el.closest('.faq-item');
+            if (!item) return;
+            const parent = item.closest('.faq-grid');
+            if (parent) parent.querySelectorAll('.faq-item').forEach(f => f.classList.remove('active'));
+            if (!item.classList.contains('active')) item.classList.add('active');
+        }
+
+        // ========================================
+        // MODAL HELPERS
+        // ========================================
+        function openModal(id) { document.getElementById('modalContent').innerHTML = majorData[id];
+            document.getElementById('majorModal').classList.add('active');
+            document.body.style.overflow = 'hidden'; }
+
+        function openSubjectModal(id) { document.getElementById('subjectModalContent').innerHTML = subjectData[id];
+            document.getElementById('subjectModal').classList.add('active');
+            document.body.style.overflow = 'hidden'; }
+
+        function openUniDeptModal(id) { document.getElementById('uniDeptModalContent').innerHTML = uniDeptData[id];
+            document.getElementById('uniDeptModal').classList.add('active');
+            document.body.style.overflow = 'hidden'; }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        document.querySelectorAll('.modal-overlay').forEach(m => {
+            m.addEventListener('click', function(e) { if (e.target === this) { this.classList.remove('active');
+                    document.body.style.overflow = ''; } });
+        });
+
+        // ========================================
+        // DATA: MAJORS (확장)
+        // ========================================
+        const majorData = {
+            cs: `<h2>💻 Computer Science</h2><p class="sub">영국 Top5: Cambridge, Oxford, Imperial, UCL, Edinburgh</p>
+                <p>컴퓨터공학은 영국 대학에서 가장 경쟁이 치열한 전공 중 하나입니다. AI, 머신러닝, 데이터 사이언스, 로보틱스, 사이버 보안 등 세부 분야가 빠르게 성장하고 있으며, 영국은 글로벌 테크 기업의 허브입니다. Cambridge의 CS는 세계 1위를 다투며, Oxford는 이론과 실용을 겸비한 커리큘럼으로 유명합니다.</p>
+                <h4>🎯 필수 AP (5점 목표)</h4>
+                <ul><li><strong>AP Calculus BC</strong> – 알고리즘 복잡도 분석, 그래프 이론, 미적분 기반 최적화.</li><li><strong>AP Computer Science A</strong> – Java 프로그래밍, 자료구조, OOP 개념.</li><li><strong>AP Statistics</strong> – 데이터 사이언스, AI, 머신러닝의 통계적 기초.</li><li><strong>AP Physics C (Mechanics)</strong> – 논리적 사고와 물리적 직관 훈련에 도움.</li></ul>
+                <h4>📌 추가 조건</h4>
+                <ul><li>SAT 1500+ / ACT 34+</li><li>Cambridge: ESAT / Oxford: MAT</li></ul>
+                <h4>💼 졸업 후 진로</h4>
+                <ul><li>소프트웨어 엔지니어 (FAANG, 삼성), AI/머신러닝 연구원, 금융권 퀀트 개발자, 테크 스타트업 창업.</li></ul>
+                <p><a href="https://www.ox.ac.uk/admissions/undergraduate/courses-listing/computer-science" target="_blank" class="official-link">🔗 Oxford CS 공식 정보</a> · <a href="https://www.undergraduate.study.cam.ac.uk/courses/computer-science" target="_blank" class="official-link">🔗 Cambridge CS 공식 정보</a></p>`,
+            mech: `<h2>⚙️ Mechanical Engineering</h2><p class="sub">Top5: Cambridge, Imperial, Manchester, Bristol, Sheffield</p>
+                <p>기계공학은 영국 산업의 근간을 이루는 전통적인 강세 분야입니다. 자동차, 항공우주, 에너지, 로보틱스 등 다양한 산업과 연계되어 있습니다.</p>
+                <h4>🎯 필수 AP</h4>
+                <ul><li><strong>AP Calculus BC</strong> – 열역학, 유체역학, 고체역학 모델링.</li><li><strong>AP Physics C: Mechanics</strong> – 고전 역학, 재료 역학.</li><li><strong>AP Physics C: E&M</strong> – 로보틱스, 제어 시스템.</li><li><strong>AP Chemistry</strong> – 재료공학, 연소, 열전달 이해.</li></ul>
+                <p><a href="https://www.imperial.ac.uk/mechanical-engineering" target="_blank" class="official-link">🔗 Imperial Mechanical Engineering</a></p>`,
+            ee: `<h2>🔌 Electrical & Electronic Engineering</h2><p class="sub">Top5: Cambridge, Imperial, UCL, Southampton, Surrey</p>
+                <p>전자전기공학은 반도체, 통신, 전력, 임베디드 시스템, IoT 등 현대 기술의 핵심을 담당합니다.</p>
+                <h4>🎯 필수 AP</h4>
+                <ul><li><strong>AP Calculus BC</strong> – 신호처리, 전자기학, 제어 시스템.</li><li><strong>AP Physics C: E&M</strong> – 전자기학, 회로 이론.</li><li><strong>AP Physics C: Mechanics</strong> – 물리적 직관과 문제 해결 능력.</li></ul>`,
+            chemeng: `<h2>🧪 Chemical Engineering</h2><p class="sub">Top5: Cambridge, Imperial, UCL, Manchester, Edinburgh</p>
+                <p>화학공학은 에너지, 신소재, 바이오공정, 환경공학 등 폭넓은 응용 분야를 가집니다.</p>
+                <h4>🎯 필수 AP</h4>
+                <ul><li><strong>AP Calculus BC</strong> – 반응 공학, 열전달.</li><li><strong>AP Chemistry</strong> – 화학 반응 속도론, 열역학.</li><li><strong>AP Physics C: Mechanics</strong> – 유체역학.</li></ul>`,
+            bio: `<h2>🧬 Biological Sciences</h2><p class="sub">Top5: Oxford, Cambridge, UCL, Imperial, KCL</p>
+                <p>생명과학은 유전학, 분자생물학, 신경과학, 생물정보학, 생화학 등 현대 생명 연구의 최전선입니다.</p>
+                <h4>🎯 필수 AP</h4>
+                <ul><li><strong>AP Biology</strong> – 세포생물학, 유전학, 생리학.</li><li><strong>AP Chemistry</strong> – 생화학, 대사 경로.</li><li><strong>AP Statistics</strong> – 생물통계, 유전자 분석.</li></ul>`,
+            physics: `<h2>🌌 Physics & Astronomy</h2><p class="sub">Top5: Cambridge, Oxford, Imperial, Manchester, Durham</p>
+                <p>물리학은 우주론, 양자물리, 응집물질, 천체물리 등 기초과학의 핵심입니다.</p>
+                <h4>🎯 필수 AP</h4>
+                <ul><li><strong>AP Physics C: Mechanics</strong> – 고전 역학.</li><li><strong>AP Physics C: E&M</strong> – 전자기학, 광학.</li><li><strong>AP Calculus BC</strong> – 수리물리.</li></ul>`,
+            math: `<h2>📐 Mathematics & Statistics</h2><p class="sub">Top5: Cambridge, Oxford, Warwick, Imperial, UCL</p>
+                <p>수학 및 통계학은 모든 과학 및 공학의 기초입니다.</p>
+                <h4>🎯 필수 AP</h4>
+                <ul><li><strong>AP Calculus BC</strong> – 미분방정식, 다변수 미적분.</li><li><strong>AP Statistics</strong> – 확률, 회귀 분석, 가설 검정.</li></ul>`
+        };
+
+        // ========================================
+        // DATA: SUBJECT CATEGORIES (확장)
+        // ========================================
+        const subjectData = {
+            humanities: `<h2>📖 인문학 (Humanities)</h2><p class="sub">영문학 · 역사 · 철학 · 언어학 · 고전학 · 신학</p>
+                <p>인문학은 인간의 문화, 사상, 언어, 역사를 탐구하는 학문으로, 영국 대학은 세계적 수준의 인문학 전통을 자랑합니다. Oxford와 Cambridge는 영문학, 역사, 철학 분야에서 수세기 동안 최고의 자리를 지켜왔습니다.</p>
+                <h4>🎯 추천 AP 과목 (5점 목표)</h4>
+                <ul><li><strong>AP English Literature</strong> – 고전 및 현대 문학 작품 분석.</li><li><strong>AP United States History / World History</strong> – 역사적 맥락 이해.</li><li><strong>AP Psychology</strong> – 인간 행동과 인지 기초.</li><li><strong>AP Art History</strong> – 시각 문화와 미학적 이해.</li></ul>
+                <h4>📌 대학별 특징</h4>
+                <ul><li><strong>Oxford:</strong> 영문학, 역사, 철학 최고. 입학시험(ELAT, HAT) 필수.</li><li><strong>Cambridge:</strong> 영문학, 고전학, 언어학 강세. CLT 시험.</li></ul>`,
+            social: `<h2>🌍 사회과학 (Social Sciences)</h2><p class="sub">경제학 · 심리학 · 정치학 · 국제관계 · 사회학 · PPE</p>
+                <p>사회과학은 인간 사회와 행동을 데이터와 이론으로 분석합니다. LSE는 경제학, 정치학, 사회학 분야에서 세계 정상급입니다.</p>
+                <h4>🎯 추천 AP 과목</h4>
+                <ul><li><strong>AP Macroeconomics / Microeconomics</strong> – 경제학 기본 개념.</li><li><strong>AP Statistics</strong> – 데이터 분석.</li><li><strong>AP Psychology</strong> – 심리학 이론과 실험 방법.</li></ul>`,
+            arts: `<h2>🎨 예술 · 디자인 (Arts & Design)</h2><p class="sub">순수미술 · 건축 · 디자인 · 음악 · 연극 · 영화</p>
+                <p>영국은 세계적인 예술 교육의 중심지로, UCL Bartlett(건축), CSM(디자인/패션), RCA(미술) 등이 글로벌 랭킹 상위를 차지합니다.</p>
+                <h4>🎯 추천 AP 과목</h4>
+                <ul><li><strong>AP Studio Art</strong> – 포트폴리오 대체 가능.</li><li><strong>AP Art History</strong> – 예술사 이론.</li></ul>`,
+            business: `<h2>📊 경영 · 경제 (Business & Management)</h2><p class="sub">경영학 · 재무 · 마케팅 · 회계 · 국제경영</p>
+                <p>영국은 런던 시티를 중심으로 한 글로벌 금융 허브로, 경영/재무 교육이 매우 강력합니다.</p>
+                <h4>🎯 추천 AP 과목</h4>
+                <ul><li><strong>AP Macroeconomics / Microeconomics</strong> – 경영 및 경제 이론.</li><li><strong>AP Statistics</strong> – 데이터 기반 의사결정.</li></ul>`,
+            law: `<h2>⚖️ 법학 (Law)</h2><p class="sub">영국법 · 국제법 · 상법 · 인권법 · 지적재산권</p>
+                <p>영국 법학은 영미법의 원류로서, 세계적으로 권위가 높습니다. Oxford, Cambridge, LSE, KCL, UCL은 법학 명문입니다.</p>
+                <h4>🎯 추천 AP 과목</h4>
+                <ul><li><strong>AP English Language / Literature</strong> – 고급 독해, 논증 에세이.</li><li><strong>AP United States History / Government</strong> – 법률 제도 이해.</li></ul>`,
+            stem: `<h2>🔬 STEM (공학 · 자연과학)</h2><p class="sub">컴퓨터공학 · 기계공학 · 전자공학 · 화학공학 · 생명과학 · 물리 · 수학</p>
+                <p>STEM은 영국 대학의 가장 강력한 분야 중 하나로, 세계적 연구 성과와 산업 연계가 뛰어납니다.</p>
+                <h4>🎯 공통 필수 AP</h4>
+                <ul><li><strong>AP Calculus BC</strong> – 모든 STEM 전공의 공통 분모.</li><li><strong>AP Physics C (Mech / E&M)</strong> – 공학/물리 필수.</li></ul>`,
+            medicine: `<h2>🏥 의학 · 보건 (Medicine & Health)</h2><p class="sub">의학 · 간호 · 치의학 · 수의학 · 공중보건</p>
+                <p>영국의 의학교육은 세계 최고 수준으로, Oxford, Cambridge, UCL, Imperial, KCL 등이 명문입니다.</p>
+                <h4>🎯 추천 AP 과목</h4>
+                <ul><li><strong>AP Biology</strong> – 인체 생리학, 유전학.</li><li><strong>AP Chemistry</strong> – 생화학, 약리학.</li></ul>`,
+            education: `<h2>📚 교육학 (Education)</h2><p class="sub">교육 · TESOL · 국제교육 · 교육심리</p>
+                <p>영국은 교육학 연구의 선두 국가로, UCL Institute of Education (IOE)는 세계 1위입니다.</p>
+                <h4>🎯 추천 AP 과목</h4>
+                <ul><li><strong>AP Psychology</strong> – 학습 심리, 발달 심리.</li><li><strong>AP English Language</strong> – 교육 자료 분석.</li></ul>`,
+            veterinary: `<h2>🐾 수의학 (Veterinary Science)</h2><p class="sub">수의학 · 동물과학 · 수의간호</p>
+                <p>영국의 수의학교육은 세계적 수준이며, Cambridge, Edinburgh, Glasgow, Bristol 등이 명문입니다.</p>
+                <h4>🎯 추천 AP 과목</h4>
+                <ul><li><strong>AP Biology</strong> – 동물 생리학, 해부학.</li><li><strong>AP Chemistry</strong> – 동물 약리학, 생화학.</li></ul>`
+        };
+
+        // ========================================
+        // DATA: UNIVERSITY DEPARTMENTS (25+ 대학 확장)
+        // ========================================
+        const uniDeptData = {
+            cam: `<h2>🏛️ University of Cambridge</h2><p class="sub">STEM · 인문 · 법학 · 음악 전 분야 최정상</p>
+                <p>케임브리지는 세계에서 가장 오래되고 권위 있는 대학 중 하나로, 120개 이상의 노벨상 수상자를 배출했습니다. 자연과학, 공학, 수학, 영문학 분야가 강합니다.</p>
+                <table><tr style="background:#f0f3f9;"><th>학과</th><th>AP 요구조건</th><th>입학시험</th></tr>
+                <tr><td>자연과학</td><td>5 AP 5점</td><td>ESAT</td></tr>
+                <tr><td>공학</td><td>5 AP 5점</td><td>ESAT</td></tr>
+                <tr><td>CS</td><td>5 AP 5점</td><td>ESAT</td></tr>
+                <tr><td>영문학</td><td>4 AP 5점</td><td>CLT</td></tr>
+                <tr><td>법학</td><td>4 AP 5점</td><td>LNAT</td></tr></table>
+                <p><a href="https://www.undergraduate.study.cam.ac.uk/" target="_blank" class="official-link">🔗 Cambridge 학부 공식 사이트</a></p>`,
+            ox: `<h2>🏛️ University of Oxford</h2><p class="sub">PPE · 법학 · 영문학 · 물리 · 수학 · 생물 명문</p>
+                <p>옥스포드는 영국에서 가장 오래된 대학으로, 인문학, 사회과학, STEM 분야 모두에서 세계적 명성을 자랑합니다. PPE 과정은 세계적으로 유명합니다.</p>
+                <table><tr style="background:#f0f3f9;"><th>학과</th><th>AP 요구조건</th><th>입학시험</th></tr>
+                <tr><td>PPE</td><td>3-4 AP 5점</td><td>TSA</td></tr>
+                <tr><td>법학</td><td>3-4 AP 5점</td><td>LNAT</td></tr>
+                <tr><td>물리</td><td>3-4 AP 5점</td><td>PAT</td></tr>
+                <tr><td>수학</td><td>3-4 AP 5점</td><td>MAT</td></tr></table>
+                <p><a href="https://www.ox.ac.uk/admissions/undergraduate" target="_blank" class="official-link">🔗 Oxford 학부 공식 사이트</a></p>`,
+            imp: `<h2>🏛️ Imperial College London</h2><p class="sub">공학 · 의과학 · CS · 물리 최강</p>
+                <p>임페리얼은 STEM 분야에 특화된 세계적 대학으로, 공학, 의과학, 자연과학에서 특히 강력합니다. 런던 중심에 위치합니다.</p>
+                <table><tr style="background:#f0f3f9;"><th>학과</th><th>AP 요구조건</th><th>입학시험</th></tr>
+                <tr><td>기계공학</td><td>4 AP 5점</td><td>ESAT</td></tr>
+                <tr><td>EEE</td><td>4 AP 5점</td><td>ESAT</td></tr>
+                <tr><td>CS</td><td>4 AP 5점</td><td>ESAT</td></tr></table>
+                <p><a href="https://www.imperial.ac.uk/study/undergraduate/" target="_blank" class="official-link">🔗 Imperial 학부 공식 사이트</a></p>`,
+            lse: `<h2>🏛️ LSE (London School of Economics)</h2><p class="sub">경제학 · 정치학 · 재무 · 사회과학 절대 강자</p>
+                <p>LSE는 사회과학 분야에서 세계 1~3위를 다투는 명문으로, 경제학, 정치학, 국제관계, 재무 분야가 특히 강력합니다.</p>
+                <table><tr style="background:#f0f3f9;"><th>학과</th><th>AP 요구조건</th><th>추가 조건</th></tr>
+                <tr><td>경제학</td><td>4 AP 5점</td><td>SAT 1480+</td></tr>
+                <tr><td>국제관계</td><td>4 AP 5점</td><td>SAT 1470+</td></tr></table>
+                <p><a href="https://www.lse.ac.uk/study-at-lse/Undergraduate" target="_blank" class="official-link">🔗 LSE 학부 공식 사이트</a></p>`,
+            ucl: `<h2>🏛️ UCL (University College London)</h2><p class="sub">전 분야 종합 명문</p>
+                <p>UCL은 런던 대학의 핵심 구성원으로, 건축, 법학, 경제학, 생명과학, 공학 등 전 분야에서 강력합니다.</p>
+                <table><tr style="background:#f0f3f9;"><th>학과</th><th>AP 요구조건</th><th>비고</th></tr>
+                <tr><td>건축</td><td>3 AP 5,5,5 + 포트폴리오</td><td>SAT 선택</td></tr>
+                <tr><td>법학</td><td>3 AP 5,5,5</td><td>LNAT</td></tr></table>`,
+            kcl: `<h2>🏛️ King's College London</h2><p class="sub">법학 · 의학 · 심리학 · 전쟁학 · 인문</p>
+                <p>KCL은 런던 중심의 명문 대학으로, 법학, 의학, 심리학, 전쟁학 분야에서 특히 강세입니다.</p>
+                <table><tr style="background:#f0f3f9;"><th>학과</th><th>AP 요구조건</th><th>입학시험</th></tr>
+                <tr><td>법학</td><td>3 AP 5,4,4</td><td>LNAT</td></tr>
+                <tr><td>심리학</td><td>3 AP 5,4,4</td><td>-</td></tr></table>
+                <p><a href="https://www.kcl.ac.uk/study/undergraduate" target="_blank" class="official-link">🔗 King's 학부 공식 사이트</a></p>`,
+            man: `<h2>🏛️ University of Manchester</h2><p class="sub">레드브릭 STEM & 경영 강세</p>
+                <p>맨체스터는 레드브릭 대학 중 가장 큰 규모로, 공학, 물리학, 경영학 분야에서 전통적인 강세를 보입니다.</p>
+                <table><tr style="background:#f0f3f9;"><th>학과</th><th>AP 요구조건</th></tr>
+                <tr><td>기계공학</td><td>3 AP 5,5,5</td></tr>
+                <tr><td>물리학</td><td>3 AP 5,5,5</td></tr></table>`,
+            war: `<h2>🏛️ University of Warwick</h2><p class="sub">수학 · 경제 · 경영 · CS 명문</p>
+                <p>워윅은 1960년대 설립된 신흥 명문으로, 수학, 경제학, 경영학, CS 분야에서 영국 상위 5위권을 유지합니다.</p>
+                <table><tr style="background:#f0f3f9;"><th>학과</th><th>AP 요구조건</th></tr>
+                <tr><td>수학</td><td>3 AP 5,4,4</td></tr>
+                <tr><td>MORSE</td><td>3 AP 5,4,4</td></tr></table>`,
+            edi: `<h2>🏛️ University of Edinburgh</h2><p class="sub">스코틀랜드 최고, 인문/STEM 강세 (4년제)</p>
+                <p>에든버러는 스코틀랜드의 최고 명문으로, 철학, AI, 생물학, 물리학 분야가 강합니다.</p>
+                <table><tr style="background:#f0f3f9;"><th>학과</th><th>AP 요구조건</th></tr>
+                <tr><td>AI/CS</td><td>3 AP 5,4,4</td></tr>
+                <tr><td>생물학</td><td>3 AP 5,4,4</td></tr></table>`,
+            dur: `<h2>🏛️ Durham University</h2><p class="sub">인문 · 법학 · 음악 · 역사 강세</p>
+                <p>더럼은 영국 내에서도 캠브리지/옥스포드와 유사한 칼리지 시스템을 가진 명문입니다.</p>
+                <table><tr style="background:#f0f3f9;"><th>학과</th><th>AP 요구조건</th></tr>
+                <tr><td>영문학</td><td>3 AP 5,5,4</td></tr>
+                <tr><td>법학</td><td>3 AP 5,5,4</td></tr></table>`,
+            dyson: `<h2>🚀 Imperial Dyson School of Design Engineering</h2><p class="sub">디자인 엔지니어링 · 혁신 · 제품디자인</p>
+                <p>임페리얼 칼리지 내에 위치한 Dyson School은 공학과 디자인을 융합한 혁신적 교육으로 유명합니다. James Dyson 재단의 지원을 받습니다.</p>
+                <h4>🎯 AP 입학 조건</h4>
+                <ul><li><strong>최소 4과목 AP 5점</strong> (Calc BC, Physics C, Chemistry/Biology, Statistics/CS A)</li>
+                <li><strong>SAT:</strong> 1480+ 권장</li>
+                <li><strong>포트폴리오:</strong> 10~15개 작품</li>
+                <li><strong>ESAT</strong> 필수</li></ul>
+                <p><a href="https://www.imperial.ac.uk/design-engineering" target="_blank" class="official-link">🔗 Imperial Dyson School 공식 웹사이트</a></p>`,
+            bristol: `<h2>🏛️ University of Bristol</h2><p class="sub">STEM · 영화 · 법학 강세</p>
+                <p>브리스톨은 영국 남서부의 명문 대학으로, 기계공학, 영화 제작, 법학 분야에서 특히 강세입니다.</p>
+                <table><tr style="background:#f0f3f9;"><th>학과</th><th>AP 요구조건</th></tr>
+                <tr><td>기계공학</td><td>3 AP 5,4,4</td></tr>
+                <tr><td>영화 제작</td><td>3 AP 5,4,4 + 포트폴리오</td></tr></table>`,
+            soton: `<h2>🏛️ University of Southampton</h2><p class="sub">공학 · 컴퓨터 · 해양학 강세</p>
+                <p>사우샘프턴은 공학, 컴퓨터 과학, 해양학 분야에서 영국 상위권을 유지합니다.</p>
+                <table><tr style="background:#f0f3f9;"><th>학과</th><th>AP 요구조건</th></tr>
+                <tr><td>EEE</td><td>3 AP 5,5,5 또는 2 AP 5,5 + SAT 1350+</td></tr>
+                <tr><td>CS</td><td>3 AP 5,5,5 또는 2 AP 5,5 + SAT 1350+</td></tr></table>`,
+            bath: `<h2>🏛️ University of Bath</h2><p class="sub">경영 · 공학 · 건축 강세</p>
+                <p>바스는 경영학, 기계공학, 건축학 분야에서 영국 상위권에 위치합니다.</p>
+                <table><tr style="background:#f0f3f9;"><th>학과</th><th>AP 요구조건</th></tr>
+                <tr><td>경영학</td><td>3 AP 4+</td></tr>
+                <tr><td>기계공학</td><td>3 AP 4+</td></tr></table>`,
+            standrews: `<h2>🏛️ University of St Andrews</h2><p class="sub">인문 · 사회 · 국제관계 강세</p>
+                <p>St Andrews는 스코틀랜드 최초의 대학으로, 국제관계, 영문학, 철학, 물리학 분야에서 세계적 명성을 가집니다.</p>
+                <table><tr style="background:#f0f3f9;"><th>학과</th><th>AP 요구조건</th></tr>
+                <tr><td>국제관계</td><td>3 AP 5,4,4</td></tr>
+                <tr><td>영문학</td><td>3 AP 5,4,4</td></tr></table>`,
+            leeds: `<h2>🏛️ University of Leeds</h2><p class="sub">경영 · 언론 · 법학 강세</p>
+                <p>리즈는 영국 북부의 대형 종합대학으로, 경영학, 저널리즘, 법학 분야가 강합니다.</p>
+                <table><tr style="background:#f0f3f9;"><th>학과</th><th>AP 요구조건</th></tr>
+                <tr><td>경영학</td><td>3 AP 5,4,4</td></tr>
+                <tr><td>저널리즘</td><td>3 AP 5,4,4</td></tr></table>`,
+            sheffield: `<h2>🏛️ University of Sheffield</h2><p class="sub">공학 · 저널리즘 · 건축 강세</p>
+                <p>셰필드는 공학, 저널리즘, 건축학 분야에서 영국 상위권을 유지합니다.</p>
+                <table><tr style="background:#f0f3f9;"><th>학과</th><th>AP 요구조건</th></tr>
+                <tr><td>기계공학</td><td>3 AP 5,4,4</td></tr>
+                <tr><td>저널리즘</td><td>3 AP 5,4,4</td></tr></table>`,
+            nottingham: `<h2>🏛️ University of Nottingham</h2><p class="sub">법학 · 경영 · 약학 강세</p>
+                <p>노팅엄은 법학, 경영학, 약학 분야에서 강세를 보입니다.</p>
+                <table><tr style="background:#f0f3f9;"><th>학과</th><th>AP 요구조건</th></tr>
+                <tr><td>법학</td><td>3 AP 5,4,4</td></tr>
+                <tr><td>경영학</td><td>3 AP 5,4,4</td></tr></table>`,
+            birmingham: `<h2>🏛️ University of Birmingham</h2><p class="sub">경영 · 법학 · 의학 강세</p>
+                <p>버밍엄은 러셀 그룹의 주요 대학으로, 경영학, 법학, 의학 분야가 강력합니다.</p>
+                <table><tr style="background:#f0f3f9;"><th>학과</th><th>AP 요구조건</th></tr>
+                <tr><td>경영학</td><td>3 AP 5,5,5</td></tr>
+                <tr><td>법학</td><td>3 AP 5,5,5</td></tr></table>`,
+            coventry: `<h2>🏛️ Coventry University</h2><p class="sub">디자인 · 공학 · 경영 강세</p>
+                <p>코벤트리는 디자인, 자동차공학, 경영학 분야에서 강세를 보입니다.</p>
+                <table><tr style="background:#f0f3f9;"><th>학과</th><th>AP 요구조건</th></tr>
+                <tr><td>자동차공학</td><td>AP 인정 (조건부)</td></tr>
+                <tr><td>디자인</td><td>AP 인정 + 포트폴리오</td></tr></table>`,
+            glasgow: `<h2>🏛️ University of Glasgow</h2><p class="sub">의학 · 법학 · 공학 강세</p>
+                <p>글래스고는 스코틀랜드의 최고 명문 중 하나로, 의학, 법학, 공학 분야에서 세계적 명성을 가집니다.</p>
+                <table><tr style="background:#f0f3f9;"><th>학과</th><th>AP 요구조건</th></tr>
+                <tr><td>의학</td><td>3 AP 5,4,4</td></tr>
+                <tr><td>법학</td><td>3 AP 5,4,4</td></tr></table>`,
+            newcastle: `<h2>🏛️ University of Newcastle</h2><p class="sub">의학 · 공학 · 농학 강세</p>
+                <p>뉴캐슬은 의학, 공학, 농학 분야에서 강세를 보입니다.</p>
+                <table><tr style="background:#f0f3f9;"><th>학과</th><th>AP 요구조건</th></tr>
+                <tr><td>의학</td><td>3 AP 5,4,4</td></tr>
+                <tr><td>기계공학</td><td>3 AP 5,4,4</td></tr></table>`,
+            loughborough: `<h2>🏛️ Loughborough University</h2><p class="sub">스포츠과학 · 공학 · 디자인 강세</p>
+                <p>러프버러는 스포츠과학 분야에서 세계 1위를 자랑합니다.</p>
+                <table><tr style="background:#f0f3f9;"><th>학과</th><th>AP 요구조건</th></tr>
+                <tr><td>스포츠과학</td><td>3 AP 5,4,4</td></tr>
+                <tr><td>기계공학</td><td>3 AP 5,4,4</td></tr></table>`,
+            york: `<h2>🏛️ University of York</h2><p class="sub">인문 · 사회 · 생물 강세</p>
+                <p>요크는 인문학, 사회과학, 생물학 분야에서 강세를 보입니다.</p>
+                <table><tr style="background:#f0f3f9;"><th>학과</th><th>AP 요구조건</th></tr>
+                <tr><td>영문학</td><td>3 AP 5,4,4</td></tr>
+                <tr><td>심리학</td><td>3 AP 5,4,4</td></tr></table>`,
+            exeter: `<h2>🏛️ University of Exeter</h2><p class="sub">경영 · 법학 · 생물 강세</p>
+                <p>엑서터는 경영학, 법학, 생물학 분야에서 강세를 보입니다.</p>
+                <table><tr style="background:#f0f3f9;"><th>학과</th><th>AP 요구조건</th></tr>
+                <tr><td>경영학</td><td>3 AP 5,4,4</td></tr>
+                <tr><td>법학</td><td>3 AP 5,4,4</td></tr></table>`
+        };
+
+        // Init: open first roadmap item
+        document.addEventListener('DOMContentLoaded', function() {
+            const first = document.querySelector('#roadmapAccordion .accordion-item');
+            if (first) first.classList.add('active');
+        });
+    </script>
+</body>
+</html>
